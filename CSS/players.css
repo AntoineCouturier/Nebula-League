@@ -1,0 +1,161 @@
+.player-card {
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid #b41cff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 0 15px #b41cff80;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.player-card:hover {
+    box-shadow: 0 0 25px #b41cff, 0 0 45px #b41cffaa;
+    transform: translateY(-4px);
+}
+
+.player-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.player-card h3 {
+    margin: 0;
+    color: #df9fff;
+}
+
+.player-card  {
+    margin: 5px 0 0;
+    color: #e0d6ff;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.bastard {
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid #ff0000;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 0 15px #ff1c1c80;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.bastard:hover {
+    box-shadow: 0 0 25px #ff1c1c, 0 0 45px #ff1c1caa;
+    transform: translateY(-4px);
+}
+
+.pxg {
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid #001eff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 0 15px #1c27ff80;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.pxg:hover {
+    box-shadow: 0 0 25px #1c3eff, 0 0 45px #1c20ffaa;
+    transform: translateY(-4px);
+}
+
+.ubers {
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid #2bff00;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 0 15px #55ff1c80;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.ubers:hover {
+    box-shadow: 0 0 25px #49ff1c, 0 0 45px #13f213aa;
+    transform: translateY(-4px);
+}
+
+.barcha {
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid #ffdd00;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 0 15px #fff01c80;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.barcha:hover {
+    box-shadow: 0 0 25px #ffe11c, 0 0 45px #ffe81caa;
+    transform: translateY(-4px);
+}
+
+.manshine {
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid #00c8ff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 0 15px #1cb7ff80;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.manshine:hover {
+    box-shadow: 0 0 25px #1cb7ff, 0 0 45px #1cc6ffaa;
+    transform: translateY(-4px);
+}
+
+.retraite {
+    background: rgba(10, 10, 10, 0.8);
+    border: 2px solid #c800ff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 0 15px #b71cff80;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.retraite:hover {
+    box-shadow: 0 0 25px #e11cff, 0 0 45px #d91cffaa;
+    transform: translateY(-4px);
+}
+
+.players-controls {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+  color: #fff;
+}
+
+.players-controls label {
+  font-weight: bold;
+}
+
+.players-controls select {
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #b41cff;
+  background: rgba(20,20,20,0.8);
+  color: #fff;
+}
+
+

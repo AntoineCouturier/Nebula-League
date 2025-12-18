@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logos/nebula.png">
+    <title>Nebula League – Joueurs</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/players.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <h1>Nebula League – Joueurs</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="title.html">Persos et Titres</a></li>
+                <li><a href="club.html">Clubs</a></li>
+                <li><a href="players.html" class="active">Joueurs</a></li>
+                <li><a href="valeur.html">Valeurs</a></li>
+                <li><a href="rules.html">Règles Matchs</a></li>
+                <li><a href="stats.html">Records</a></li>
+                <li><a href="matchs.html">Historique de Matchs</a></li>
+                <li><a href="saison.html">Historique des Saisons</a></li>
+                <li>
+    <a href="https://discord.gg/Ab9tFpzm" target="_blank" class="discord-btn">
+        <img src="images/logos/discord.png"
+             alt="Discord Logo" class="discord-logo">
+        Discord
+    </a>
+</li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="players-controls">
+  <label for="clubFilter">Filtrer par club :</label>
+  <select id="clubFilter">
+    <option value="all">Tous</option>
+    <option value="bastard">Bastard Munchen</option>
+    <option value="pxg">PXG</option>
+    <option value="ubers">Ubers</option>
+    <option value="barcha">Barcha</option>
+    <option value="manshine">Manshine City</option>
+    <option value="retraite">Retraite</option>
+    <!-- ajoute d'autres clubs ici si nécessaire -->
+  </select>
+
+  <label for="valueSort">Trier par Valeur :</label>
+  <select id="valueSort">
+    <option value="desc">Décroissant</option>
+    <option value="asc">Croissant</option>
+  </select>
+</div>
+
+
+<main class="cards-container" id="playersContainer"></main>
+
+
+
+<script src="JavaScript/players.js"></script>
+
+</body>
+</html>

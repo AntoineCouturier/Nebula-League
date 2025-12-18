@@ -1,0 +1,360 @@
+/* ---------------- GLOBAL ---------------- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    color: #fff;
+    background: #000;
+    background-attachment: fixed;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+    text-align: center;
+    padding: 25px 10px;
+    background: rgba(20,20,20,0.8);
+    border-bottom: 2px solid #6f00ff;
+    box-shadow: 0 0 20px rgba(180, 28, 230, 0.3);
+    border-radius: 0 0 15px 15px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #d59cff;
+    text-shadow: 0 0 6px #000;
+}
+
+/* ---------------- CATEGORY BAR ---------------- */
+.category-bar {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.category-btn, .home-btn {
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+/* Buttons styles by category */
+.home-btn {
+    background: #555;
+    color: rgb(255, 255, 255);
+}
+.home-btn:hover {
+    background: linear-gradient(135deg, #2b063c, #6f00ff);  
+    color: rgb(235, 179, 255);
+}
+.category-btn {
+    color: rgb(255, 255, 255);
+    background: #555;
+}
+
+.all-top.active, .all-top:hover {
+    background: linear-gradient(135deg, #a6a6a6, #fff);
+    color: black;
+}
+
+.ligue-top.active, .ligue-top:hover {
+    background: linear-gradient(135deg, #ff3b3b, #b30000);
+    color: black;
+}
+
+.ncl-top.active, .ncl-top:hover {
+    background: linear-gradient(135deg, #bf00ff, #810098);
+    color: black;
+}
+
+.amical-top.active, .amical-top:hover {
+    background: linear-gradient(135deg, #00a2ff, #005198);
+    color: black;
+}
+
+/* ---------------- MATCH LIST ---------------- */
+.match-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin: 30px 10px;
+}
+
+/* ---------------- MATCH CARD ---------------- */
+.match-card {
+    width: 90%;
+    background: rgba(30,30,30,0.95);
+    border-radius: 20px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+/* Hover glow by type */
+.ligue-card:hover {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+}
+.ncl-card:hover {
+    box-shadow: 0 0 25px rgba(183, 0, 255, 0.5);
+}
+.amical-card:hover {
+    box-shadow: 0 0 25px rgba(0, 110, 255, 0.5);
+}
+
+/* ---------------- MATCH HEADER ---------------- */
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 22px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.score-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-date {
+    color: #b8b8b8;
+}
+
+.score-ncl, .score-ligue, .score-amical {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Color by type */
+.score-ncl { color: #bf00ff; }
+.score-ligue { color: #ff0000; }
+.score-amical { color: #00a2ff; }
+
+/* Buteurs */
+.buteurs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* ---------------- DETAILS BUTTON ---------------- */
+.details-btn {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+/* Gradient by type */
+.ligue { background: linear-gradient(135deg, #ff3b3b, #770000); }
+.ncl { background: linear-gradient(135deg, #bf00ff, #570066); }
+.amical { background: linear-gradient(135deg, #00a2ff, #003a6c); }
+
+.details-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.video-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    color: rgb(0, 0, 0);
+    float: right; /* ➜ aligne le bouton à droite */
+    margin-top: 10px;
+    background: linear-gradient(135deg, #ffffff, #000000);
+}
+
+/* même hover */
+.video-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #000000, #ffffff);
+    color: rgb(255, 255, 255);
+}
+
+
+/* ---------------- POPUP ---------------- */
+.popup-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.ligue-box {
+    background: rgba(25,25,25,0.95);
+    border-radius: 15px;
+    padding: 25px;
+    width: 70%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 25px rgba(230, 28, 28, 0.5);
+}
+
+.ncl-box {
+    background: rgba(25,25,25,0.95);
+    border-radius: 15px;
+    padding: 25px;
+    width: 70%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 25px rgba(180,28,230,0.5);
+}
+
+.amical-box {
+    background: rgba(25,25,25,0.95);
+    border-radius: 15px;
+    padding: 25px;
+    width: 70%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 25px rgba(28, 132, 230, 0.5);
+}
+
+/* Headers inside popup */
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.team-details h4 {
+    border-bottom: 2px solid;
+    padding-bottom: 3px;
+}
+
+.ligue-details h4 { border-color: #ff0000; }
+.ncl-details h4 { border-color: #bf00ff; }
+.amical-details h4 { border-color: #00a2ff; }
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.close-btn {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    background: #333;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
+}
+.close-btn:hover { opacity: 0.85; }
+
+/* ---------------- NOTES SECTION ---------------- */
+.notes-section {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 2px solid #444;
+}
+
+.notes-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.notes-team {
+    width: 48%;
+    min-width: 180px;
+}
+
+.note-titre {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #d59cff;
+}
+
+.note-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.note-name {
+    width: 40%;
+    font-weight: bold;
+}
+
+.note-bar {
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background: #333;
+}
+
+/* Scrollbars popup (Webkit) */
+.popup-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.popup-box::-webkit-scrollbar-track {
+    background: rgba(20,20,20,0.8);
+    border-radius: 10px;
+}
+
+.ligue-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #ff0000, #980000);
+    border-radius: 10px;
+}
+
+.ligue-box::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #980000, #ff0000);
+}
+
+.ncl-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #bf00ff, #810098);
+    border-radius: 10px;
+}
+
+.ncl-box::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #810098, #bf00ff);
+}
+
+.amical-box::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0091ff, #005198);
+    border-radius: 10px;
+}
+
+.amical-box::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #005198, #0091ff);
+}

@@ -1,0 +1,222 @@
+/* -------------------- Global -------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #000;
+        background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+header {
+    background: rgba(10, 10, 10, 0.75);
+    padding: 15px 20px;
+    border-bottom: 2px solid #6f00ff;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px #6f00ff80;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #d89aff;
+    text-shadow: 0 0 6px #000;
+}
+
+/* NAVIGATION */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    color: #e6e6e6;
+    font-weight: bold;
+    transition: 0.25s;
+    border: 1px solid transparent;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: linear-gradient(135deg, #a600ff, #b41ce6);
+    border-color: #b41ce6;
+    color: white;
+    box-shadow: 0 0 10px #b41ce6;
+}
+
+/* ---------- Bouton Discord ---------- */
+
+.discord-btn {
+    display: flex;
+    align-items: right;
+    gap: 8px;
+    background: #ffffff; /* Couleur Discord */
+    padding: 6px 14px;
+    border-radius: 6px;
+    color: #4752C4 !important;
+    font-weight: bold;
+    transition: 0.25s ease-in-out;
+}
+
+.discord-btn:hover {
+    background: #4752C4; /* Hover Discord */
+    transform: scale(1.07);
+    box-shadow: 0 0 12px #5865F2aa;
+    color: white !important;
+}
+
+.discord-logo {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+/* -------------------- Cards -------------------- */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 20px;
+}
+
+.card-A {
+    background: rgba(10, 10, 10, 0.7);
+    border: 2px solid #b41cff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #b41cff80;
+    transition: 0.3s;
+    width: 280px;
+}
+
+.card-A:hover {
+    box-shadow: 0 0 25px #b41cff, 0 0 45px #b41cffaa;
+    transform: translateY(-4px);
+}
+
+.card-A h3 {
+    color: #df9fff;
+    margin-top: 0;
+}
+
+.card-A p {
+    line-height: 1.5;
+    color: #e0d6ff;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-A {
+        width: 90%;
+    }
+}
+
+
+
+.section {
+    padding: 50px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid #b45cff;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 5px #000;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-top: 2px solid #3a3a3a;
+    margin-top: 40px;
+    color: #888;
+}
+
+h3 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #b45cff;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-shadow: 0px 0px 3px #000;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #555;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(135deg, #a600ff, #b41ce6);
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;        /* Couleur de fond (thème sombre) */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;           /* Couleur du "bouton" */
+    border-radius: 6px;
+    border: 2px solid #1a1a1a;  /* Espace autour du thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;           /* Couleur au survol */
+}
+
+
+
+/* Firefox (fonctionne différemment) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #444 #1a1a1a;
+}
+
