@@ -1,96 +1,259 @@
-/* ---------------- GLOBAL ---------------- */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    background: #000;
+/* saison.css - Thème aligné sur match.css */
+
+/* ===== VARIABLES PAR TYPE D'ÉQUIPE ===== */
+:root {
+    /* Couleurs des équipes - alignées avec club.css */
+    --bastard-color: #ff0000;
+    --bastard-border: #ff0000;
+    --bastard-glow: rgba(255, 0, 0, 0.5);
+    --bastard-bg: rgba(255, 0, 0, 0.1);
+    
+    --pxg-color: #00008b;
+    --pxg-border: #0033ff;
+    --pxg-glow: rgba(0, 51, 255, 0.5);
+    --pxg-bg: rgba(0, 51, 255, 0.1);
+    
+    --ubers-color: #00b800;
+    --ubers-border: #00ff11;
+    --ubers-glow: rgba(0, 255, 17, 0.5);
+    --ubers-bg: rgba(0, 255, 17, 0.1);
+    
+    --barcha-color: #fff200;
+    --barcha-border: #ffd900;
+    --barcha-glow: rgba(255, 217, 0, 0.5);
+    --barcha-bg: rgba(255, 217, 0, 0.1);
+    
+    --manshine-color: #00e1ff;
+    --manshine-border: #00eaff;
+    --manshine-glow: rgba(0, 234, 255, 0.5);
+    --manshine-bg: rgba(0, 234, 255, 0.1);
+    
+    /* Couleurs de base communes */
+    --card-bg: rgba(10, 10, 10, 0.7);
+    --card-border: #b41cff;
+    --text-primary: #ffffff;
+    --text-secondary: #e0d6ff;
 }
 
-/* ---------------- HEADER ---------------- */
+/* ===== BASE COMMUNE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(100, 0, 150, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(0, 50, 150, 0.2) 0%, transparent 40%),
+        radial-gradient(ellipse at 40% 60%, rgba(150, 0, 100, 0.25) 0%, transparent 40%),
+        linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 50%, #0a1a2a 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+}
+
+/* Effet d'étoiles subtiles */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ddd, transparent),
+        radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+        radial-gradient(2px 2px at 160px 120px, #eee, transparent),
+        radial-gradient(1px 1px at 200px 160px, #fff, transparent),
+        radial-gradient(3px 3px at 240px 200px, rgba(180, 28, 255, 0.5), transparent),
+        radial-gradient(2px 2px at 280px 240px, rgba(100, 0, 255, 0.4), transparent);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* ===== HEADER (identique aux matchs) ===== */
 header {
-    text-align: center;
-    padding: 25px 10px;
-    background: rgba(20,20,20,0.85);
+    background: rgba(10, 10, 10, 0.75);
+    padding: 15px 20px;
     border-bottom: 2px solid #6f00ff;
-    border-radius: 0 0 15px 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px #6f00ff80;
+    text-align: center;
 }
 
 header h1 {
+    margin: 0;
     font-size: 2rem;
-    color: #d59cff;
+    color: #d89aff;
     text-shadow: 0 0 6px #000;
 }
 
-/* ---------------- BOUTON ACCUEIL ---------------- */
+/* ===== BOUTON ACCUEIL (identique) ===== */
+.category-bar {
+    margin-top: 15px;
+}
+
 .home-btn {
-    padding: 8px 16px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
+    text-decoration: none;
+    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    color: #e6e6e6;
     font-weight: bold;
-    background: linear-gradient(135deg, #555, #888);
-    color: #fff;
-    transition: 0.3s;
+    transition: 0.25s;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 0.95rem;
 }
 
 .home-btn:hover {
-    background: linear-gradient(135deg, #2b063c, #6f00ff);
-    color: #fff;
+    background: linear-gradient(135deg, #a600ff, #b41ce6);
+    border-color: #b41ce6;
+    color: white;
+    box-shadow: 0 0 10px #b41ce6;
 }
 
-/* ---------------- SEASON LIST ---------------- */
+/* ===== LISTE DES SAISONS ===== */
 .season-list {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-top: 20px;
-    padding-bottom: 25px;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* ---------------- SEASON CARD ---------------- */
+/* ===== CARTE DE SAISON - STYLES PAR ÉQUIPE GAGNANTE ===== */
 .season-card {
-    background: rgba(30,30,30,0.85);
-    width: 90%;
-    border-radius: 20px;
-    padding: 25px;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.7);
+    padding: 20px;
+    border-radius: 15px;
     transition: 0.3s;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    border: 2px solid;
+    box-shadow: 0 0 15px;
 }
 
-/* Hover de couleur selon équipe */
-.bastard-card:hover { box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
-.pxg-card:hover { box-shadow: 0 0 20px rgba(0, 0, 139, 0.5); }
-.ubers-card:hover { box-shadow: 0 0 20px rgba(0, 184, 0, 0.5); }
-.barcha-card:hover { box-shadow: 0 0 20px rgba(255, 242, 0, 0.5); }
-.manshine-card:hover { box-shadow: 0 0 20px rgba(0, 225, 255, 0.5); }
+/* Bordures et ombres par équipe */
+.bastard-card {
+    border-color: var(--bastard-border);
+    box-shadow: 0 0 15px var(--bastard-glow);
+}
 
-/* ---------------- SEASON HEADER ---------------- */
+.pxg-card {
+    border-color: var(--pxg-border);
+    box-shadow: 0 0 15px var(--pxg-glow);
+}
+
+.ubers-card {
+    border-color: var(--ubers-border);
+    box-shadow: 0 0 15px var(--ubers-glow);
+}
+
+.barcha-card {
+    border-color: var(--barcha-border);
+    box-shadow: 0 0 15px var(--barcha-glow);
+}
+
+.manshine-card {
+    border-color: var(--manshine-border);
+    box-shadow: 0 0 15px var(--manshine-glow);
+}
+
+/* Hover par équipe */
+.bastard-card:hover {
+    box-shadow: 0 0 25px var(--bastard-glow), 0 0 45px var(--bastard-glow);
+    transform: translateY(-4px);
+}
+
+.pxg-card:hover {
+    box-shadow: 0 0 25px var(--pxg-glow), 0 0 45px var(--pxg-glow);
+    transform: translateY(-4px);
+}
+
+.ubers-card:hover {
+    box-shadow: 0 0 25px var(--ubers-glow), 0 0 45px var(--ubers-glow);
+    transform: translateY(-4px);
+}
+
+.barcha-card:hover {
+    box-shadow: 0 0 25px var(--barcha-glow), 0 0 45px var(--barcha-glow);
+    transform: translateY(-4px);
+}
+
+.manshine-card:hover {
+    box-shadow: 0 0 25px var(--manshine-glow), 0 0 45px var(--manshine-glow);
+    transform: translateY(-4px);
+}
+
+/* ===== EN-TÊTE DE SAISON ===== */
 .season-header {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .season-header h1 {
     font-size: 1.6rem;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #df9fff;
 }
 
 .season-header h2 {
     font-size: 1.3rem;
     margin-bottom: 5px;
+    color: var(--text-secondary);
 }
 
 .season-dates {
     font-size: 0.9rem;
-    color: #aaa;
+    color: #b8b8b8;
     display: block;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 8px;
 }
 
-/* ---------------- TABLES ---------------- */
+/* Couleur du nom de l'équipe gagnante dans le titre */
+.bastard-card .season-header h1 span.bastard {
+    color: var(--bastard-color);
+}
+
+.pxg-card .season-header h1 span.pxg {
+    color: var(--pxg-color);
+}
+
+.ubers-card .season-header h1 span.ubers {
+    color: var(--ubers-color);
+}
+
+.barcha-card .season-header h1 span.barcha {
+    color: var(--barcha-color);
+}
+
+.manshine-card .season-header h1 span.manshine {
+    color: var(--manshine-color);
+}
+
+/* ===== TABLEAU DE CLASSEMENT ===== */
+.season-table {
+    margin: 15px 0;
+}
+
 .season-table table {
     width: 100%;
     border-collapse: collapse;
@@ -98,107 +261,286 @@ header h1 {
 }
 
 .season-table th, .season-table td {
-    padding: 8px 12px;
+    padding: 10px 12px;
     text-align: center;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .season-table th {
-    background: rgba(25,25,25,0.9);
+    background: rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    color: #d59cff;
+    border-bottom: 2px solid rgba(180, 28, 255, 0.3);
 }
 
-/* ---------------- SEASON INFO ---------------- */
+.season-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Couleurs des noms d'équipes dans le tableau */
+.season-table td.bastard {
+    color: var(--bastard-color);
+    font-weight: 600;
+}
+
+.season-table td.pxg {
+    color: var(--pxg-color);
+    font-weight: 600;
+}
+
+.season-table td.ubers {
+    color: var(--ubers-color);
+    font-weight: 600;
+}
+
+.season-table td.barcha {
+    color: var(--barcha-color);
+    font-weight: 600;
+}
+
+.season-table td.manshine {
+    color: var(--manshine-color);
+    font-weight: 600;
+}
+
+/* ===== INFO COMPLÉMENTAIRES ===== */
+.season-info {
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .season-info p {
-    margin: 5px 0;
+    margin: 8px 0;
     font-weight: bold;
-    color: #fff;
+    color: #d59cff;
+}
+
+.season-info strong {
+    color: #ffffff;
 }
 
 .most-goals, .winning-club, .ballon-or {
     color: gold;
 }
 
-/* ---------------- TEAM COLORS ---------------- */
-.bastard { color: #ff0000; }        /* rouge */
-.pxg { color: #00008b; }           /* bleu foncé */
-.barcha { color: #fff200; }        /* jaune */
-.ubers { color: #00b800; }         /* vert */
-.manshine { color: #00e1ff; }      /* bleu ciel */
-
-/* ---------------- BUTTONS ---------------- */
-.details-btn, .close-btn {
+/* ===== BOUTON DÉTAILS (identique aux matchs) ===== */
+.details-btn {
     margin-top: 15px;
     padding: 10px 15px;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    background: linear-gradient(135deg, #8c00ff, #b41ce6);
-    color: #fff;
     transition: 0.3s;
+    color: white;
+    font-size: 0.9rem;
+    width: 100%;
+    background: linear-gradient(135deg, #a600ff, #b41ce6);
 }
 
-.details-btn:hover, .close-btn:hover {
+.details-btn:hover {
     opacity: 0.85;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(180, 28, 255, 0.3);
 }
 
-/* ---------------- POPUP ---------------- */
+/* ===== POPUP (identique aux matchs) ===== */
 .popup-bg {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(3px);
     display: none;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
     z-index: 2000;
 }
 
 .popup-box {
-    background: rgba(25,25,25,0.95);
-    padding: 25px;
-    width: 80%;
-    max-width: 700px;
+    background: rgba(10, 10, 10, 0.95);
     border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border: 2px solid #b41cff;
+    box-shadow: 0 0 25px #b41cff80;
 }
 
+.popup-box h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    color: #d59cff;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(180, 28, 255, 0.3);
+}
+
+/* ===== CONTENU DU POPUP ===== */
 .popup-content {
-    max-height: 80vh;
+    max-height: 70vh;
     overflow-y: auto;
-    padding: 15px;
-    background-color: rgba(20,20,20,0.85);
-    border-radius: 12px;
-    color: #fff;
+    padding: 10px;
 }
 
 .season-section {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ---------------- SECTION TITLES ---------------- */
-.leaderboard { color: #fff200; border-bottom: 1px solid #fff200; padding-bottom: 5px; margin-bottom: 10px; }
-.goal { color: #ff0000; border-bottom: 1px solid #ff0000; padding-bottom: 5px; margin-bottom: 10px; }
-.assist { color: #00bfff; border-bottom: 1px solid #00bfff; padding-bottom: 5px; margin-bottom: 10px; }
-.goal-assist { color: #9d00ff; border-bottom: 1px solid #9d00ff; padding-bottom: 5px; margin-bottom: 10px; }
+.season-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
 
-/* ---------------- SCROLLBAR ---------------- */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #1a1a1a; border-radius: 6px; }
-::-webkit-scrollbar-thumb { background: #444; border-radius: 6px; border: 2px solid #1a1a1a; }
-::-webkit-scrollbar-thumb:hover { background: #666; }
+/* Titres des sections avec couleurs spécifiques */
+.season-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid;
+}
 
-* { scrollbar-width: thin; scrollbar-color: #444 #1a1a1a; }
+.leaderboard {
+    color: #fff200;
+    border-bottom-color: #fff200;
+}
 
-/* ---------------- MOBILE ---------------- */
-@media (max-width: 600px) {
-    .season-card { padding: 15px; border-radius: 12px; margin-bottom: 50px; }
-    .season-header h2 { font-size: 1.2rem; }
-    .season-dates { font-size: 0.85rem; }
-    .season-table table { font-size: 0.75rem; }
-    .season-table th, .season-table td { padding: 6px; }
-    .details-btn { width: 100%; padding: 12px; font-size: 1rem; }
-    .popup-box { width: 90%; max-height: 90%; padding: 20px; border-radius: 14px; }
-    .popup-content table { font-size: 0.8rem; }
+.goal {
+    color: #ff0000;
+    border-bottom-color: #ff0000;
+}
+
+.assist {
+    color: #00bfff;
+    border-bottom-color: #00bfff;
+}
+
+.goal-assist {
+    color: #9d00ff;
+    border-bottom-color: #9d00ff;
+}
+
+/* Tableaux dans le popup */
+.popup-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.popup-content th, .popup-content td {
+    padding: 8px 10px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.popup-content th {
+    background: rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    color: #d59cff;
+}
+
+.popup-content tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== BOUTON FERMER (identique aux matchs) ===== */
+.close-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 8px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #b41ce6;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: linear-gradient(135deg, #a600ff, #b41ce6);
+    box-shadow: 0 0 10px #b41ce6;
+}
+
+/* ===== SCROLLBAR (identique aux matchs) ===== */
+.popup-box::-webkit-scrollbar,
+.popup-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.popup-box::-webkit-scrollbar-track,
+.popup-content::-webkit-scrollbar-track {
+    background: rgba(10, 10, 10, 0.8);
+    border-radius: 4px;
+}
+
+.popup-box::-webkit-scrollbar-thumb,
+.popup-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #a600ff, #b41ce6);
+    border-radius: 4px;
+}
+
+.popup-box::-webkit-scrollbar-thumb:hover,
+.popup-content::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #b41ce6, #8b5cf6);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .season-list {
+        padding: 20px 15px;
+    }
+    
+    .season-card {
+        padding: 15px;
+    }
+    
+    .season-header h1 {
+        font-size: 1.4rem;
+    }
+    
+    .season-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .season-table th, .season-table td {
+        padding: 8px 6px;
+        font-size: 0.85rem;
+    }
+    
+    .popup-box {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .popup-content table {
+        font-size: 0.8rem;
+    }
+    
+    .popup-content th, .popup-content td {
+        padding: 6px 4px;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.season-card {
+    animation: fadeIn 0.5s ease;
+}
+
+.popup-bg {
+    animation: fadeIn 0.3s ease;
 }

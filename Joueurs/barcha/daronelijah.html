@@ -6,6 +6,8 @@
     <link rel="icon" type="image/png" href="../../images/logos/nebula.png">
     <title>Carte Joueur - Placeholder</title>
     <link rel="stylesheet" href="../player-card.css">
+    <link rel="stylesheet" href="../../CSS/colors.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -57,6 +59,9 @@
         <br>
         <br>
         <p><strong class="stats">👤 Global :</strong> 69 | <span class="sss" data-text="Rang Ultime">Rang SSS</span></p>
+        <button class="radar-btn barcha-season" id="openRadarPopup">
+        📊 Voir graphique radar
+    </button>
     </div>
 
     <!-- Cube Stats matchs -->
@@ -165,7 +170,26 @@
         <button class="close-btn" id="closeMatchPopup">Fermer</button>
     </div>
 </div>
-
+<!-- 🔥 POPUP GRAPHIQUE RADAR -->
+<div class="popup-overlay" id="popupRadar">
+    <div class="popup-box barcha-box" id="radarPopupBox">
+        <h2>Graphique des Compétences - Daronelijah</h2>
+        
+        <div class="radar-container">
+            <canvas id="skillsRadarChart" width="400" height="400"></canvas>
+        </div>
+        
+        <!-- Légende -->
+        <div class="radar-legend">
+            <div class="legend-item">
+                <span class="legend-color" style="background:#ff0000"></span>
+                <span>Daronelijah</span>
+            </div>
+        </div>
+        
+        <button class="close-btn" id="closeRadarPopup">Fermer</button>
+    </div>
+</div>
 <script src="../player-card.js"></script>
 </body>
 </html>

@@ -1,360 +1,716 @@
-/* ---------------- GLOBAL ---------------- */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    color: #fff;
-    background: #000;
-    background-attachment: fixed;
+/* match.css - Thème aligné avec couleurs par type de match */
+
+/* ===== VARIABLES PAR TYPE DE MATCH ===== */
+:root {
+    /* Couleurs de base du site */
+    --space-dark: #0a0a1a;
+    --space-purple: #1a0a2a;
+    --space-blue: #0a1a2a;
+    --neon-purple: #b41ce6;
+    --neon-pink: #b41cff;
+    --text-primary: #ffffff;
+    --text-secondary: #e0d6ff;
+    
+    /* Couleurs spécifiques */
+    --ligue-color: #ff3b3b;
+    --ligue-border: #ff0000;
+    --ligue-glow: rgba(255, 0, 0, 0.5);
+    --ligue-bg: rgba(255, 59, 59, 0.1);
+    
+    --ncl-color: #bf00ff;
+    --ncl-border: #bf00ff;
+    --ncl-glow: rgba(191, 0, 255, 0.5);
+    --ncl-bg: rgba(191, 0, 255, 0.1);
+    
+    --amical-color: #00a2ff;
+    --amical-border: #0091ff;
+    --amical-glow: rgba(0, 145, 255, 0.5);
+    --amical-bg: rgba(0, 162, 255, 0.1);
+    
+    --card-bg: rgba(10, 10, 10, 0.7);
+    --card-border: #b41cff;
 }
 
-/* ---------------- HEADER ---------------- */
+/* ===== BASE (identique) ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(100, 0, 150, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(0, 50, 150, 0.2) 0%, transparent 40%),
+        radial-gradient(ellipse at 40% 60%, rgba(150, 0, 100, 0.25) 0%, transparent 40%),
+        linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 50%, #0a1a2a 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+}
+
+/* Effet d'étoiles subtiles */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ddd, transparent),
+        radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+        radial-gradient(2px 2px at 160px 120px, #eee, transparent),
+        radial-gradient(1px 1px at 200px 160px, #fff, transparent),
+        radial-gradient(3px 3px at 240px 200px, rgba(180, 28, 255, 0.5), transparent),
+        radial-gradient(2px 2px at 280px 240px, rgba(100, 0, 255, 0.4), transparent);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* ===== HEADER ===== */
 header {
-    text-align: center;
-    padding: 25px 10px;
-    background: rgba(20,20,20,0.8);
+    background: rgba(10, 10, 10, 0.75);
+    padding: 15px 20px;
     border-bottom: 2px solid #6f00ff;
-    box-shadow: 0 0 20px rgba(180, 28, 230, 0.3);
-    border-radius: 0 0 15px 15px;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px #6f00ff80;
+    text-align: center;
 }
 
 header h1 {
+    margin: 0;
     font-size: 2rem;
-    color: #d59cff;
+    color: #d89aff;
     text-shadow: 0 0 6px #000;
 }
 
-/* ---------------- CATEGORY BAR ---------------- */
+/* ===== BARRE DE CATÉGORIES ===== */
 .category-bar {
-    margin-top: 15px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
-.category-btn, .home-btn {
-    padding: 8px 16px;
+.home-btn, .category-btn {
+    text-decoration: none;
+    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    color: #e6e6e6;
     font-weight: bold;
-    border-radius: 12px;
-    border: none;
+    transition: 0.25s;
+    border: 1px solid transparent;
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.home-btn:hover {
+    background: linear-gradient(135deg, #a600ff, #b41ce6);
+    border-color: #b41ce6;
+    color: white;
+    box-shadow: 0 0 10px #b41ce6;
+}
+
+.category-btn {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.category-btn:hover, .category-btn.active {
+    background: linear-gradient(135deg, #a600ff, #b41ce6);
     color: white;
 }
 
-/* Buttons styles by category */
-.home-btn {
-    background: #555;
-    color: rgb(255, 255, 255);
-}
-.home-btn:hover {
-    background: linear-gradient(135deg, #2b063c, #6f00ff);  
-    color: rgb(235, 179, 255);
-}
-.category-btn {
-    color: rgb(255, 255, 255);
-    background: #555;
-}
-
+/* ===== COULEURS SPÉCIFIQUES DES BOUTONS CATÉGORIE ===== */
 .all-top.active, .all-top:hover {
     background: linear-gradient(135deg, #a6a6a6, #fff);
     color: black;
+    box-shadow: 0 0 10px #ffffff;
+    border-color: #ffffff;
 }
 
 .ligue-top.active, .ligue-top:hover {
     background: linear-gradient(135deg, #ff3b3b, #b30000);
     color: black;
+    box-shadow: 0 0 10px #ff0000;
+    border-color: #ff0000;
 }
 
 .ncl-top.active, .ncl-top:hover {
     background: linear-gradient(135deg, #bf00ff, #810098);
     color: black;
+    box-shadow: 0 0 10px #bf00ff;
+    border-color: #bf00ff;
 }
 
 .amical-top.active, .amical-top:hover {
     background: linear-gradient(135deg, #00a2ff, #005198);
     color: black;
+    box-shadow: 0 0 10px #009dff;
+    border-color: #0084ff;
 }
 
-/* ---------------- MATCH LIST ---------------- */
+/* ===== LISTE DES MATCHS ===== */
 .match-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
-    margin: 30px 10px;
+    gap: 20px;
+    padding: 30px 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-/* ---------------- MATCH CARD ---------------- */
+/* ===== CARTE DE MATCH - STYLES PAR TYPE ===== */
 .match-card {
-    width: 90%;
-    background: rgba(30,30,30,0.95);
-    border-radius: 20px;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.7);
     padding: 20px;
+    border-radius: 15px;
     transition: 0.3s;
+    border: 2px solid;
 }
 
-/* Hover glow by type */
+/* Bordures par type */
+.ligue-card {
+    border-color: var(--ligue-border);
+    box-shadow: 0 0 15px var(--ligue-glow);
+}
+
+.ncl-card {
+    border-color: var(--ncl-border);
+    box-shadow: 0 0 15px var(--ncl-glow);
+}
+
+.amical-card {
+    border-color: var(--amical-border);
+    box-shadow: 0 0 15px var(--amical-glow);
+}
+
+/* Hover par type */
 .ligue-card:hover {
-    box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
-}
-.ncl-card:hover {
-    box-shadow: 0 0 25px rgba(183, 0, 255, 0.5);
-}
-.amical-card:hover {
-    box-shadow: 0 0 25px rgba(0, 110, 255, 0.5);
+    box-shadow: 0 0 25px var(--ligue-glow), 0 0 45px var(--ligue-glow);
+    transform: translateY(-4px);
 }
 
-/* ---------------- MATCH HEADER ---------------- */
+.ncl-card:hover {
+    box-shadow: 0 0 25px var(--ncl-glow), 0 0 45px var(--ncl-glow);
+    transform: translateY(-4px);
+}
+
+.amical-card:hover {
+    box-shadow: 0 0 25px var(--amical-glow), 0 0 45px var(--amical-glow);
+    transform: translateY(-4px);
+}
+
+/* ===== EN-TÊTE DE MATCH ===== */
 .match-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 22px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .team {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
+    flex: 1;
 }
 
 .team-logo {
     width: 60px;
     height: 60px;
-    object-fit: cover;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 50%;
-    margin-bottom: 5px;
+    padding: 4px;
+    border: 2px solid rgba(180, 28, 255, 0.3);
+}
+
+.match-card img:hover {
+    transform: scale(1.3);
+}
+
+.team span {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #df9fff;
 }
 
 .score-block {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
+    flex: 1;
 }
 
 .match-date {
     color: #b8b8b8;
+    font-size: 0.9rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px 12px;
+    border-radius: 12px;
 }
 
-.score-ncl, .score-ligue, .score-amical {
-    font-size: 28px;
-    font-weight: bold;
+/* Scores colorés par type */
+.score-ligue {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: 'Arial', sans-serif;
+    color: var(--ligue-color);
 }
 
-/* Color by type */
-.score-ncl { color: #bf00ff; }
-.score-ligue { color: #ff0000; }
-.score-amical { color: #00a2ff; }
+.score-ncl {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: 'Arial', sans-serif;
+    color: var(--ncl-color);
+}
 
-/* Buteurs */
+.score-amical {
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-family: 'Arial', sans-serif;
+    color: var(--amical-color);
+}
+
+/* ===== DÉTAILS DE MATCH ===== */
+.match-details {
+    margin: 15px 0;
+}
+
 .buteurs {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
-/* ---------------- DETAILS BUTTON ---------------- */
-.details-btn {
+.buteurs-left, .buteurs-right {
+    flex: 1;
+}
+
+.buteurs-left {
+    text-align: left;
+}
+
+.buteurs-right {
+    text-align: right;
+}
+
+.buteurs li {
+    padding: 6px 12px;
+    margin-bottom: 6px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    border-left: 3px solid;
+    list-style: none;
+    font-size: 0.95rem;
+}
+
+/* Bordures colorées pour les buteurs */
+.ligue-card .buteurs-left li {
+    border-left-color: var(--ligue-color);
+}
+
+.ncl-card .buteurs-left li {
+    border-left-color: var(--ncl-color);
+}
+
+.amical-card .buteurs-left li {
+    border-left-color: var(--amical-color);
+}
+
+.ligue-card .buteurs-right li {
+    border-right: 3px solid var(--ligue-color);
+    border-left: none;
+}
+
+.ncl-card .buteurs-right li {
+    border-right: 3px solid var(--ncl-color);
+    border-left: none;
+}
+
+.amical-card .buteurs-right li {
+    border-right: 3px solid var(--amical-color);
+    border-left: none;
+}
+
+.match-details p {
+    text-align: center;
+    font-weight: 600;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* Couleur du texte MVP par type */
+.ligue-card .match-details p {
+    color: var(--ligue-color);
+}
+
+.ncl-card .match-details p {
+    color: var(--ncl-color);
+}
+
+.amical-card .match-details p {
+    color: var(--amical-color);
+}
+
+.match-details strong {
+    color: #ffffff;
+}
+
+/* ===== BOUTONS ===== */
+.card-buttons {
+    display: flex;
+    gap: 10px;
     margin-top: 15px;
+}
+
+.details-btn, .video-btn {
+    flex: 1;
     padding: 10px 15px;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
     color: white;
+    font-size: 0.9rem;
 }
 
-/* Gradient by type */
-.ligue { background: linear-gradient(135deg, #ff3b3b, #770000); }
-.ncl { background: linear-gradient(135deg, #bf00ff, #570066); }
-.amical { background: linear-gradient(135deg, #00a2ff, #003a6c); }
+/* Boutons Détails colorés par type */
+.details-btn.ligue {
+    background: linear-gradient(135deg, var(--ligue-color), #b30000);
+}
+
+.details-btn.ncl {
+    background: linear-gradient(135deg, var(--ncl-color), #810098);
+}
+
+.details-btn.amical {
+    background: linear-gradient(135deg, var(--amical-color), #005198);
+}
 
 .details-btn:hover {
     opacity: 0.85;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .video-btn {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    color: rgb(0, 0, 0);
-    float: right; /* ➜ aligne le bouton à droite */
-    margin-top: 10px;
-    background: linear-gradient(135deg, #ffffff, #000000);
+    background: rgba(30, 30, 30, 0.8);
+    border: 1px solid #4752C4;
+    color: white;
 }
 
-/* même hover */
 .video-btn:hover {
-    opacity: 0.85;
+    background: #4752C4;
+    box-shadow: 0 0 10px #5865F2aa;
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #000000, #ffffff);
-    color: rgb(255, 255, 255);
 }
 
-
-/* ---------------- POPUP ---------------- */
+/* ===== POPUP ===== */
 .popup-bg {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(3px);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 2000;
 }
 
-.ligue-box {
-    background: rgba(25,25,25,0.95);
+/* Popup box avec couleur selon type */
+.popup-box {
+    background: rgba(10, 10, 10, 0.95);
     border-radius: 15px;
-    padding: 25px;
-    width: 70%;
-    max-width: 600px;
-    max-height: 80vh;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 0 0 25px rgba(230, 28, 28, 0.5);
+    box-shadow: 0 0 25px;
+}
+
+.ligue-box {
+    border: 2px solid var(--ligue-border);
+    box-shadow: 0 0 25px var(--ligue-glow);
 }
 
 .ncl-box {
-    background: rgba(25,25,25,0.95);
-    border-radius: 15px;
-    padding: 25px;
-    width: 70%;
-    max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 0 25px rgba(180,28,230,0.5);
+    border: 2px solid var(--ncl-border);
+    box-shadow: 0 0 25px var(--ncl-glow);
 }
 
 .amical-box {
-    background: rgba(25,25,25,0.95);
-    border-radius: 15px;
-    padding: 25px;
-    width: 70%;
-    max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 0 25px rgba(28, 132, 230, 0.5);
+    border: 2px solid var(--amical-border);
+    box-shadow: 0 0 25px var(--amical-glow);
 }
 
-/* Headers inside popup */
+.popup-box h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid;
+}
+
+.ligue-box h3 {
+    color: var(--ligue-color);
+    border-bottom-color: var(--ligue-color);
+}
+
+.ncl-box h3 {
+    color: var(--ncl-color);
+    border-bottom-color: var(--ncl-color);
+}
+
+.amical-box h3 {
+    color: var(--amical-color);
+    border-bottom-color: var(--amical-color);
+}
+
+/* ===== DÉTAILS DU POPUP ===== */
 .details-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-top: 15px;
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .details-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.team-details {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .team-details h4 {
-    border-bottom: 2px solid;
-    padding-bottom: 3px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid;
+    padding-bottom: 5px;
 }
 
-.ligue-details h4 { border-color: #ff0000; }
-.ncl-details h4 { border-color: #bf00ff; }
-.amical-details h4 { border-color: #00a2ff; }
+/* Titres colorés selon type */
+.ligue-details h4 {
+    color: var(--ligue-color);
+    border-bottom-color: var(--ligue-color);
+}
 
-ul {
+.ncl-details h4 {
+    color: var(--ncl-color);
+    border-bottom-color: var(--ncl-color);
+}
+
+.amical-details h4 {
+    color: var(--amical-color);
+    border-bottom-color: var(--amical-color);
+}
+
+.team-details ul {
     list-style: none;
     padding-left: 0;
 }
 
-.close-btn {
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 12px;
-    border: none;
-    background: #333;
-    cursor: pointer;
-    font-weight: bold;
-    color: #fff;
+.team-details li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
 }
-.close-btn:hover { opacity: 0.85; }
 
-/* ---------------- NOTES SECTION ---------------- */
+.team-details li:last-child {
+    border-bottom: none;
+}
+
+/* ===== NOTES DES JOUEURS ===== */
 .notes-section {
     margin-top: 25px;
     padding-top: 15px;
-    border-top: 2px solid #444;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notes-section h4 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #d59cff;
 }
 
 .notes-columns {
-    display: flex;
-    justify-content: space-between;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .notes-columns {
+        grid-template-columns: 1fr;
+    }
 }
 
 .notes-team {
-    width: 48%;
-    min-width: 180px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .note-titre {
-    margin-bottom: 10px;
     text-align: center;
-    color: #d59cff;
+    margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 .note-item {
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    gap: 10px;
+    margin-bottom: 8px;
 }
 
 .note-name {
-    width: 40%;
-    font-weight: bold;
+    width: 120px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #e0d6ff;
 }
 
 .note-bar {
-    height: 10px;
-    width: 100%;
-    border-radius: 10px;
-    background: #333;
+    flex: 1;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-/* Scrollbars popup (Webkit) */
+.note-bar div {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* ===== BOUTON FERMER ===== */
+.close-btn {
+    display: block;
+    margin: 20px auto 0;
+    padding: 8px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #b41ce6;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    background: linear-gradient(135deg, #a600ff, #b41ce6);
+    box-shadow: 0 0 10px #b41ce6;
+}
+
+/* ===== SCROLLBAR ===== */
 .popup-box::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 .popup-box::-webkit-scrollbar-track {
-    background: rgba(20,20,20,0.8);
-    border-radius: 10px;
+    background: rgba(10, 10, 10, 0.8);
+    border-radius: 4px;
 }
 
 .ligue-box::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #ff0000, #980000);
-    border-radius: 10px;
-}
-
-.ligue-box::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #980000, #ff0000);
+    background: linear-gradient(135deg, var(--ligue-color), #b30000);
+    border-radius: 4px;
 }
 
 .ncl-box::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #bf00ff, #810098);
-    border-radius: 10px;
-}
-
-.ncl-box::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #810098, #bf00ff);
+    background: linear-gradient(135deg, var(--ncl-color), #810098);
+    border-radius: 4px;
 }
 
 .amical-box::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #0091ff, #005198);
-    border-radius: 10px;
+    background: linear-gradient(135deg, var(--amical-color), #005198);
+    border-radius: 4px;
 }
 
-.amical-box::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #005198, #0091ff);
+.popup-box::-webkit-scrollbar-thumb:hover {
+    opacity: 0.8;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .match-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .team {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .score-block {
+        order: -1;
+    }
+    
+    .score-ligue, .score-ncl, .score-amical {
+        font-size: 2rem;
+    }
+    
+    .category-bar {
+        padding: 0 10px;
+    }
+    
+    .home-btn, .category-btn {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== ANIMATIONS SIMPLES ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.match-card {
+    animation: fadeIn 0.5s ease;
+}
+
+.popup-bg {
+    animation: fadeIn 0.3s ease;
 }

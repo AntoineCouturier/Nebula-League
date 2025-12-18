@@ -12,7 +12,8 @@
 
 .player-card:hover {
     box-shadow: 0 0 25px #b41cff, 0 0 45px #b41cffaa;
-    transform: translateY(-4px);
+    transform: translateY(10px);
+    transform: scale(1.1);
 }
 
 .player-card img {
@@ -158,4 +159,149 @@
   color: #fff;
 }
 
+/* Ajoutez à players.css */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.player-card {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* Délai progressif pour chaque carte */
+.player-card:nth-child(1) { animation-delay: 0.1s; }
+.player-card:nth-child(2) { animation-delay: 0.2s; }
+.player-card:nth-child(3) { animation-delay: 0.3s; }
+.player-card:nth-child(4) { animation-delay: 0.4s; }
+.player-card:nth-child(5) { animation-delay: 0.5s; }
+/* Continuez selon le besoin */
+
+/* Ajoutez à players.css */
+/* Style de base pour toutes les images */
+.player-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Effets spécifiques selon le club */
+.bastard img {
+    box-shadow: 0 0 10px rgba(255, 28, 28, 0.3);
+}
+
+.pxg img {
+    box-shadow: 0 0 10px rgba(28, 31, 255, 0.3);
+}
+
+.ubers img {
+    box-shadow: 0 0 10px rgba(43, 255, 0, 0.3);
+}
+
+.barcha img {
+    box-shadow: 0 0 10px rgba(255, 221, 0, 0.3);
+}
+
+.manshine img {
+    box-shadow: 0 0 10px rgba(0, 200, 255, 0.3);
+}
+
+.retraite img {
+    box-shadow: 0 0 10px rgba(200, 0, 255, 0.3);
+}
+
+/* Effets au survol selon le club */
+.bastard:hover img {
+    border-color: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 28, 28, 0.7);
+    transform: scale(1.1);
+}
+
+.pxg:hover img {
+    border-color: #001eff;
+    box-shadow: 0 0 20px rgba(28, 31, 255, 0.7);
+    transform: scale(1.1);
+}
+
+.ubers:hover img {
+    border-color: #2bff00;
+    box-shadow: 0 0 20px rgba(43, 255, 0, 0.7);
+    transform: scale(1.1);
+}
+
+.barcha:hover img {
+    border-color: #ffdd00;
+    box-shadow: 0 0 20px rgba(255, 221, 0, 0.7);
+    transform: scale(1.1);
+}
+
+.manshine:hover img {
+    border-color: #00c8ff;
+    box-shadow: 0 0 20px rgba(0, 200, 255, 0.7);
+    transform: scale(1.1);
+}
+
+.retraite:hover img {
+    border-color: #c800ff;
+    box-shadow: 0 0 20px rgba(200, 0, 255, 0.7);
+    transform: scale(1.1);
+}
+
+/* Style pour le prix - seulement le nombre */
+.player-card p:last-child {
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+/* Effet "bling" seulement sur le nombre */
+.price-number {
+    background: linear-gradient(90deg, #8afffd, #fff, #8afffd);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2s infinite linear;
+}
+
+/* Animation du shimmer */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Pour les valeurs à 0 */
+.price-number.zero-value {
+    color: #888 !important;
+    animation: none !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+}
+
+.price-number.zero-value::after {
+    content: " (Sans valeur)";
+    font-size: 0.8em;
+    color: #ff6b6b;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
 

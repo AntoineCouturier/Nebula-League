@@ -6,6 +6,8 @@
     <link rel="icon" type="image/png" href="../../images/logos/nebula.png">
     <title>Carte Joueur - Imrane</title>
     <link rel="stylesheet" href="../player-card.css">
+    <link rel="stylesheet" href="../../CSS/colors.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -28,7 +30,7 @@
     <!-- Carte principale -->
     <div class="player-card-main">
         <div class="player-header-manshine">
-            <img src="../images-joueurs/ntm.png" alt="@Levraiboucsnk">
+            <img src="../images-joueurs/imrane.png" alt="@Levraiboucsnk">
             <h2>Imrane</h2>
         </div>
 
@@ -57,6 +59,9 @@
         <br>
         <br>
         <p><strong class="stats">👤 Global :</strong> 91 | <span class="ss">Rang SS</span></p>
+        <button class="radar-btn manshine-season" id="openRadarPopup">
+        📊 Voir graphique radar
+    </button>
     </div>
 
     <!-- Cube Stats matchs -->
@@ -165,7 +170,27 @@
         <button class="close-btn" id="closeMatchPopup">Fermer</button>
     </div>
 </div>
-
+<!-- Juste avant </body> -->
+<!-- 🔥 POPUP GRAPHIQUE RADAR -->
+<div class="popup-overlay" id="popupRadar">
+    <div class="popup-box manshine-box" id="radarPopupBox">
+        <h2>Graphique des Compétences - Imrane</h2>
+        
+        <div class="radar-container">
+            <canvas id="skillsRadarChart" width="400" height="400"></canvas>
+        </div>
+        
+        <!-- Légende -->
+        <div class="radar-legend">
+            <div class="legend-item">
+                <span class="legend-color" style="background:#ff0000"></span>
+                <span>Imrane</span>
+            </div>
+        </div>
+        
+        <button class="close-btn" id="closeRadarPopup">Fermer</button>
+    </div>
+</div>
 <script src="../player-card.js"></script>
 </body>
 </html>

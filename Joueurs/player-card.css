@@ -7,6 +7,29 @@ body {
     color: #dddddd;
 }
 
+/* Effet d'étoiles subtiles */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ddd, transparent),
+        radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+        radial-gradient(2px 2px at 160px 120px, #eee, transparent),
+        radial-gradient(1px 1px at 200px 160px, #fff, transparent),
+        radial-gradient(3px 3px at 240px 200px, rgba(180, 28, 255, 0.5), transparent),
+        radial-gradient(2px 2px at 280px 240px, rgba(100, 0, 255, 0.4), transparent);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
 /* -------------------- Navigation -------------------- */
 header {
     background-color: #1a1a1a;
@@ -750,15 +773,79 @@ h2 {
     animation: popupFade 0.25s ease-out;
 }
 
-
-
 /* Global */
-.final-wall{color: rgb(13, 197, 0);}
-.butterfly{color: rgb(241, 230, 15);}
-.metavision{color: rgb(2, 62, 142);}
-.predator{color: rgb(128, 3, 3);}
-.geniusadaptation{color: rgb(126, 199, 255);}
-.impossible{color: rgb(93, 122, 225);}
+.crown{
+  background-image: linear-gradient(90deg, #43ff36, #ffea00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.crown .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.butterfly{
+  background-image: linear-gradient(90deg, #eeff02, #6d007b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.butterfly .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.metavision{
+  background-image: linear-gradient(90deg, #005cc5, #b5b1ff, #ffffff);   
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.metavision .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.predator{
+  background-image: linear-gradient(90deg, #c50000, #3d0000, #461818);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.predator .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.godspeed{
+  background-image: linear-gradient(90deg, #00a4c5,#fff59e, #ff7700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.godspeed .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.rainbow{
+  background-image: linear-gradient(90deg, #c50000, #84ff00, #0055c5, #b800c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.rainbow .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
 /* Machinery plus bas */
 .acestriker{color: rgb(255, 0, 0);}
 .elitestriker{color: rgb(197, 0, 0);}
@@ -783,41 +870,123 @@ h2 {
 .ballonor{color: goldenrod;}
 /* Goat plus bas */
 
-/* ====================================================Global Animation==================================================== */
-.machinery {
-    position: relative;
-    display: inline-block;
+/* Rareté */
+.commun {color: rgb(150, 255, 150);}
+.rare {color: rgb(150, 201, 255);}
+.legendary {color: rgb(255, 238, 86);}
+.mythical {color: rgb(255, 0, 251);}
+.worldclass {color: rgb(97, 97, 97);}
+.evo {color: rgb(174, 54, 255);}
 
-    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(192, 182, 0), rgb(255, 255, 255), rgb(2, 72, 142));
-    background-size: 300%;
-    animation: shine 3s linear infinite;
+/* Isagi */
+.heartofblk{color: #2731f0;}
+.luck{color: #ffda80;}
 
-    -webkit-background-clip: text;
-    color: transparent;
+/* Nagi */
+.lazy{color: #dfdede;;}
+.awoken{color: #73d5ff;}
+.fallen{color: #a7a7a7;}
+
+/* Chigiri */
+.speedster{color: #af0482;}
+.panther{color: #e91e63;}
+
+/* Bachira */
+.monster{color: #776b00;}
+.ginga{color: #c9ba00;;}
+
+/* Shidou */
+.zesty{color: #b700ff;}
+.formless{color: #ef75ff;}
+.devil{color: #9b59b6;}
+
+/* Otoya */
+.ninpo{color: #3bff21;}
+.stealth{color: #79a371;}
+
+/* Niko */
+.watchtower{color: #00d491;}
+.guardingeyes{color: #002eb7;}
+
+/* Kurona */
+.hotline{color: #e91e63;}
+.reliable{color: #b40062;}
+
+/* Karasu */
+.crow{color: #0b08ab;}
+.assassin{color: #15144a;}
+
+/* Hiori */
+.ultrasadist{color: #15879e;}
+.icecompass{color: #97f1ff;}
+
+/* Kunigami */
+.wildcard{color: #ca6100;}
+.joker{color: #743600;}
+
+/* Yukimiya */
+.oneonone{color: #ff9900;}
+.street{color: #ffaa50;}
+.swordscrew{color: #a84300;}
+
+/* Aiku */
+.ultimate{color: #19d400;}
+.godsnake{color: #c20000;}
+
+/* Barou */
+.king{color: #9e0000;}
+.blkjoker{color: #4e0000;}
+
+/* Sae */
+.japantreasure{color: #e2006d;}
+.prodigy{color: #00ff5f;}
+.beautifuldestruction{color: #ad1457;}
+
+/* Kaiser */
+.emperor{color: #2900d4;}
+.superstar{color: #7185b6;}
+
+/* Lorenzo */
+.aceeater{color: #4700aa;}
+.zombie{color: #006623;}
+
+/* Rin */
+.puppet{color: #0d0094;}
+.berserk{color: #11806a;}
+.disgustingdestruction{color: #091264;}
+
+/* Reo */
+.copycatoffense{
+  position: relative;
+  display: list-item;
+  width: 100%;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #7700ff 0%, #74ffd8 40%, #af1bff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: copycat-shine 3s linear infinite;
 }
-
-.machinery::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-
-    background: inherit;
-    background-size: inherit;
-    animation: inherit;
-    -webkit-background-clip: text;
-    color: transparent;
-
-    filter: blur(16px);
-    opacity: 1;
-    pointer-events: none;
-
-    /* 💡 Correction du glow vertical */
-    transform: scaleY (1) translateY(-2px);
-    transform-origin: center;
+.copycatdefense{
+  position: relative;
+  display: list-item;
+  width: 100%;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #7700ff 0%, #7dff74 40%, #af1bff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: copycat-shine 3s linear infinite;
 }
+.perfectcopy{color: #be90ff;}
 
+/* NEL Isagi */
+.neoegoist{color: #00053a;}
+.demonking{color: #463679;}
 
-.greateststriker {
+/*================================ Animated Global Styles ================================*/
+
+.striker {
     position: relative;
     display: inline-block;
 
@@ -829,7 +998,7 @@ h2 {
     color: transparent;
 }
 
-.greateststriker::after {
+.striker::after {
     content: attr(data-text);
     position: absolute;
     inset: 0;
@@ -849,7 +1018,7 @@ h2 {
     transform-origin: center;
 }
 
-.greatestpasser {
+.passer {
     position: relative;
     display: inline-block;
 
@@ -861,7 +1030,7 @@ h2 {
     color: transparent;
 }
 
-.greatestpasser::after {
+.passer::after {
     content: attr(data-text);
     position: absolute;
     inset: 0;
@@ -881,7 +1050,7 @@ h2 {
     transform-origin: center;
 }
 
-.greatestdefender {
+.defender {
     position: relative;
     display: inline-block;
 
@@ -893,7 +1062,7 @@ h2 {
     color: transparent;
 }
 
-.greatestdefender::after {
+.defender::after {
     content: attr(data-text);
     position: absolute;
     inset: 0;
@@ -950,74 +1119,185 @@ h2 {
     100% { background-position: 300%; }
 }
 
-/* ====================================================Global Animation==================================================== */
+.machinery {
+    position: relative;
+    display: inline-block;
+
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(192, 182, 0), rgb(255, 255, 255), rgb(2, 72, 142));
+    background-size: 300%;
+    animation: shine 3s linear infinite;
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.machinery::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+    background-size: inherit;
+    animation: inherit;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter: blur(16px);
+    opacity: 1;
+    pointer-events: none;
+
+    /* 💡 Correction du glow vertical */
+    transform: scaleY (1) translateY(-2px);
+    transform-origin: center;
+}
+
+@keyframes shine {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+}
 
 
-/* Isagi */
-.heartofblk{color: #2731f0;}
-.luck{color: #ffda80;}
+/* Ajouter à player-card.css */
+.player-card-main, 
+.player-card-fifa-stats, 
+.player-card-match-stats, 
+.player-card-trophies {
+    animation: slideUp 0.6s ease-out forwards;
+    opacity: 0;
+}
 
-/* Nagi */
-.lazy{color: #dfdede;;}
-.awoken{color: #73d5ff;}
-.fallen{color: #a7a7a7;}
+.player-card-fifa-stats { animation-delay: 0.1s; }
+.player-card-match-stats { animation-delay: 0.2s; }
+.player-card-trophies { animation-delay: 0.3s; }
 
-/* Chigiri */
-.speedster{color: #af0482;}
-.panther{color: #e91e63;}
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-/* Bachira */
-.monster{color: #776b00;}
-.ginga{color: #c9ba00;;}
+/* Cube Graphique Radar */
+.player-card-radar {
+    background: rgba(20,20,20,0.95);
+    border-radius: 20px;
+    padding: 25px 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+    flex: 1 1 350px;
+    margin-top: 20px;
+    animation: slideUp 0.6s ease-out 0.4s forwards;
+    opacity: 0;
+}
 
-/* Shidou */
-.zesty{color: #b700ff;}
-.formless{color: #ef75ff;}
-.devil{color: #9b59b6;}
+.radar-chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin: 20px 0;
+}
 
-/* Kurona */
-.hotline{color: #e91e63;}
-.reliable{color: #b40062;}
+.chart-note {
+    font-size: 0.85rem;
+    color: #aaa;
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+}
 
-/* Kunigami */
-.wildcard{color: #ca6100;}
-.joker{color: #743600;}
+/* Animation pour l'apparition */
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-/* Yukimiya */
-.oneonone{color: #ff9900;}
-.street{color: #ffaa50;}
-.swordscrew{color: #a84300;}
+/* Style spécifique pour Bastard Munchen */
+.bastard-radar canvas {
+    filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.3));
+}
 
-/* Aiku */
-.ultimate{color: #19d400;}
-.godsnake{color: #c20000;}
+/* ==================== RADAR BOUTON & CONTAINER ==================== */
 
-/* Isagi */
-.heartofblk{color: #2731f0;}
-.luck{color: #ffda80;}
+/* Bouton radar générique */
+.radar-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-/* Barou */
-.king{color: #9e0000;}
-.blkjoker{color: #4e0000;}
+/* Bouton spécifique par club */
+.player-card-fifa-stats .radar-btn.bastard-season {
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+}
+.player-card-fifa-stats .radar-btn.manshine-season {
+    background: linear-gradient(135deg, #00d5ff, #0099cc);
+}
+.player-card-fifa-stats .radar-btn.pxg-season {
+    background: linear-gradient(135deg, #01049e, #000066);
+}
+.player-card-fifa-stats .radar-btn.ubers-season {
+    background: linear-gradient(135deg, #0ba700, #067900);
+}
+.player-card-fifa-stats .radar-btn.barcha-season {
+    background: linear-gradient(135deg, #e4c200, #b39700);
+}
+.player-card-fifa-stats .radar-btn.retraite-season {
+    background: linear-gradient(135deg, #b300e4, #8a00ad);
+}
 
-/* Sae */
-.japantreasure{color: #e2006d;}
-.prodigy{color: #00ff5f;}
-.beautifuldestruction{color: #ad1457;}
+.radar-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
 
-/* Kaiser */
-.emperor{color: #2900d4;}
-.superstar{color: #7185b6;}
+.radar-btn:active {
+    transform: translateY(-1px);
+}
 
-/* Lorenzo */
-.aceeater{color: #4700aa;}
-.zombie{color: #006623;}
+/* Container radar */
+.radar-container {
+    width: 100%;
+    height: 280px;
+    margin: 15px 0;
+    position: relative;
+}
 
-/* Rin */
-.puppet{color: #0d0094;}
-.berserk{color: #11806a;}
-.disgustingdestruction{color: #091264;}
+.radar-info {
+    text-align: center;
+    margin: 15px 0;
+    color: #fff;
+}
 
-/* NEL Isagi */
-.neoegoist{color: #00053a;}
-.demonking{color: #463679;}
+.radar-info p {
+    margin: 5px 0;
+}
+
+.rating-info {
+    font-size: 0.85rem;
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Canvas fix */
+#skillsRadarChart {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}

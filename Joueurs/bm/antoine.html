@@ -6,6 +6,8 @@
     <link rel="icon" type="image/png" href="../../images/logos/nebula.png">
     <title>Carte Joueur - Antoine</title>
     <link rel="stylesheet" href="../player-card.css">
+    <link rel="stylesheet" href="../../CSS/colors.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -57,6 +59,11 @@
         <br>
         <br>
         <p><strong class="stats">👤 Global :</strong> 91 | <span class="ss">Rang SS</span></p>
+        <br>
+        <button class="radar-btn bastard-season" id="openRadarPopup">
+    📊 Voir graphique radar
+</button>
+        
     </div>
 
     <!-- Cube Stats matchs -->
@@ -84,7 +91,7 @@
         </ul>
         <h3>Titres</h3>
         <ul>
-            <li><strong class="impossible">Impossible Pass</strong></li>
+            <li><strong class="rainbow">Rainbow Passes</strong></li>
         </ul>
     </div>
 
@@ -176,6 +183,27 @@
         </div>
 
         <button class="close-btn" id="closeMatchPopup">Fermer</button>
+    </div>
+</div>
+
+<!-- 🔥 POPUP GRAPHIQUE RADAR -->
+<div class="popup-overlay" id="popupRadar">
+    <div class="popup-box bastard-box" id="radarPopupBox">
+        <h2>Graphique des Compétences - Antoine</h2>
+        
+        <div class="radar-container">
+            <canvas id="skillsRadarChart" width="400" height="400"></canvas>
+        </div>
+        
+        <!-- Légende -->
+        <div class="radar-legend">
+            <div class="legend-item">
+                <span class="legend-color" style="background:#ff0000"></span>
+                <span>Antoine</span>
+            </div>
+        </div>
+        
+        <button class="close-btn" id="closeRadarPopup">Fermer</button>
     </div>
 </div>
 

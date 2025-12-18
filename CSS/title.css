@@ -1,9 +1,41 @@
 /* Base similaire à club.css */
 body {
-    background: #000;
-    color: white;
     margin: 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: 
+        radial-gradient(ellipse at 20% 20%, rgba(100, 0, 150, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 80%, rgba(0, 50, 150, 0.2) 0%, transparent 40%),
+        radial-gradient(ellipse at 40% 60%, rgba(150, 0, 100, 0.25) 0%, transparent 40%),
+        linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 50%, #0a1a2a 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+    color: #fff;
+}
+
+/* Effet d'étoiles subtiles */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #ddd, transparent),
+        radial-gradient(1px 1px at 130px 80px, #fff, transparent),
+        radial-gradient(2px 2px at 160px 120px, #eee, transparent),
+        radial-gradient(1px 1px at 200px 160px, #fff, transparent),
+        radial-gradient(3px 3px at 240px 200px, rgba(180, 28, 255, 0.5), transparent),
+        radial-gradient(2px 2px at 280px 240px, rgba(100, 0, 255, 0.4), transparent);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    z-index: -1;
+    opacity: 0.4;
 }
 
 header {
@@ -238,68 +270,77 @@ nav ul li a.active {
   /* Couleurs d’origine par type */
 }
 
-.char-btn.global:hover { background: linear-gradient(5deg, #8f00cc, #000000); color: #000000; box-shadow: 0 0 10px #c940ff; }
-.char-btn.global.active { background: linear-gradient(5deg, #000000, #8f00cc); color: #ffffff; box-shadow: 0 0 10px #c940ff; }
+.char-btn.global:hover { background: linear-gradient(5deg, #8f00cc, #000000); color: #000000; box-shadow: 0 0 10px #8f00cc; }
+.char-btn.global.active { background: linear-gradient(5deg, #000000, #8f00cc); color: #ffffff; box-shadow: 0 0 10px #ffffff; }
 
-.char-btn.isagi:hover { background: linear-gradient(5deg, #0300cc, #1cfc6a); color: #000000; box-shadow: 0 0 10px #89ff72; }
-.char-btn.isagi.active { background: linear-gradient(5deg, #1cfc6a, #0300cc); color: #ffffff; box-shadow: 0 0 10px #89ff72; }
+.char-btn.isagi:hover { background: linear-gradient(5deg, #0300cc, #1cfc6a); color: #000000; box-shadow: 0 0 10px #1cfc6a; }
+.char-btn.isagi.active { background: linear-gradient(5deg, #1cfc6a, #0300cc); color: #ffffff; box-shadow: 0 0 10px #0300cc; }
 
-.char-btn.nagi:hover { background: linear-gradient(5deg, #23566f, #abd6ff); color: #000000; box-shadow: 0 0 10px #80fffb; }
-.char-btn.nagi.active { background: linear-gradient(5deg, #abd6ff, #23566f); color: #ffffff; box-shadow: 0 0 10px #80fffb; }
+.char-btn.nagi:hover { background: linear-gradient(5deg, #23566f, #abd6ff); color: #000000; box-shadow: 0 0 10px #abd6ff; }
+.char-btn.nagi.active { background: linear-gradient(5deg, #abd6ff, #23566f); color: #ffffff; box-shadow: 0 0 10px #23566f; }
 
-.char-btn.chigiri:hover { background: linear-gradient(5deg, #f700ff, #e00c41); color: #030303; box-shadow: 0 0 10px #ff3ab7; }
-.char-btn.chigiri.active { background: linear-gradient(5deg, #e00c41, #f700ff); color: #ffffff; box-shadow: 0 0 10px #ff3ab7; }
+.char-btn.chigiri:hover { background: linear-gradient(5deg, #f700ff, #e00c41); color: #030303; box-shadow: 0 0 10px #e00c41; }
+.char-btn.chigiri.active { background: linear-gradient(5deg, #e00c41, #f700ff); color: #ffffff; box-shadow: 0 0 10px #f700ff; }
 
-.char-btn.bachira:hover { background: linear-gradient(5deg, #3f3400, #adb004); color: #000000; box-shadow: 0 0 10px #fff700; }
-.char-btn.bachira.active { background: linear-gradient(5deg, #adb004, #3f3400); color: #ffffff; box-shadow: 0 0 10px #fff700; }
+.char-btn.bachira:hover { background: linear-gradient(5deg, #3f3400, #adb004); color: #000000; box-shadow: 0 0 10px #adb004; }
+.char-btn.bachira.active { background: linear-gradient(5deg, #adb004, #3f3400); color: #ffffff; box-shadow: 0 0 10px #3f3400; }
 
-.char-btn.shidou:hover { background: linear-gradient(135deg, #8f00cc, #9d00a2); color: #000000; box-shadow: 0 0 10px #f201ff; }
-.char-btn.shidou.active { background: linear-gradient(135deg, #9d00a2, #8f00cc); color: #ffffff; box-shadow: 0 0 10px #f201ff; }
+.char-btn.shidou:hover { background: linear-gradient(135deg, #8f00cc, #9d00a2); color: #000000; box-shadow: 0 0 10px #9d00a2; }
+.char-btn.shidou.active { background: linear-gradient(135deg, #9d00a2, #8f00cc); color: #ffffff; box-shadow: 0 0 10px #9d00a2; }
 
-.char-btn.kurona:hover { background: linear-gradient(5deg, #70a2ff, #9f0447); color: #000000; box-shadow: 0 0 10px #a90074; }
-.char-btn.kurona.active { background: linear-gradient(5deg, #9f0447, #70a2ff); color: #ffffff; box-shadow: 0 0 10px #a90074; }
+.char-btn.kurona:hover { background: linear-gradient(5deg, #70a2ff, #9f0447); color: #000000; box-shadow: 0 0 10px #9f0447; }
+.char-btn.kurona.active { background: linear-gradient(5deg, #9f0447, #70a2ff); color: #ffffff; box-shadow: 0 0 10px #70a2ff; }
 
-.char-btn.reo:hover { background: linear-gradient(5deg, #c9a8f6, #6e00ad); color: #000000; box-shadow: 0 0 10px #9900ff; }
-.char-btn.reo.active { background: linear-gradient(5deg, #6e00ad, #c9a8f6); color: #ffffff; box-shadow: 0 0 10px #9900ff; }
+.char-btn.reo:hover { background: linear-gradient(5deg, #c9a8f6, #6e00ad); color: #000000; box-shadow: 0 0 10px #6e00ad; }
+.char-btn.reo.active { background: linear-gradient(5deg, #6e00ad, #c9a8f6); color: #ffffff; box-shadow: 0 0 10px #c9a8f6; }
 
-.char-btn.kunigami:hover { background: linear-gradient(5deg, #cc0000, #5f2e00); color: #000000; box-shadow: 0 0 10px #b26b00; }
-.char-btn.kunigami.active { background: linear-gradient(5deg, #5f2e00, #cc0000); color: #ffffff; box-shadow: 0 0 10px #b26b00; }
+.char-btn.kunigami:hover { background: linear-gradient(5deg, #cc0000, #5f2e00); color: #000000; box-shadow: 0 0 10px #5f2e00; }
+.char-btn.kunigami.active { background: linear-gradient(5deg, #5f2e00, #cc0000); color: #ffffff; box-shadow: 0 0 10px #cc0000; }
 
-.char-btn.yukimiya:hover { background: linear-gradient(5deg, #8f00cc, #ffa200); color: #000000; box-shadow: 0 0 10px #ff810a; }
-.char-btn.yukimiya.active { background: linear-gradient(5deg, #ffa200, #8f00cc); color: #ffffff; box-shadow: 0 0 10px #ff810a; }
+.char-btn.yukimiya:hover { background: linear-gradient(5deg, #8f00cc, #ffa200); color: #000000; box-shadow: 0 0 10px #ffa200; }
+.char-btn.yukimiya.active { background: linear-gradient(5deg, #ffa200, #8f00cc); color: #ffffff; box-shadow: 0 0 10px #8f00cc; }
 
-.char-btn.aiku:hover { background: linear-gradient(5deg, #8f00cc, #21a403); color: #000000; box-shadow: 0 0 10px #44ff00; }
-.char-btn.aiku.active { background: linear-gradient(5deg, #21a403, #8f00cc); color: #ffffff; box-shadow: 0 0 10px #44ff00; }
+.char-btn.aiku:hover { background: linear-gradient(5deg, #8f00cc, #21a403); color: #000000; box-shadow: 0 0 10px #21a403; }
+.char-btn.aiku.active { background: linear-gradient(5deg, #21a403, #8f00cc); color: #ffffff; box-shadow: 0 0 10px #8f00cc; }
 
-.char-btn.barou:hover { background: linear-gradient(5deg, #000000, #7f0000); color: #000000; box-shadow: 0 0 10px #820000; }
-.char-btn.barou.active { background: linear-gradient(5deg, #7f0000, #000000); color: #ffffff; box-shadow: 0 0 10px #820000; }
+.char-btn.barou:hover { background: linear-gradient(5deg, #000000, #7f0000); color: #000000; box-shadow: 0 0 10px #7f0000; }
+.char-btn.barou.active { background: linear-gradient(5deg, #7f0000, #000000); color: #ffffff; box-shadow: 0 0 10px #000000; }
 
-.char-btn.sae:hover { background: linear-gradient(60deg, #1cff6f, #ed0973); color: #000000; box-shadow: 0 0 10px #ff42d3; }
-.char-btn.sae.active { background: linear-gradient(60deg, #ed0973, #1cff6f); color: #ffffff; box-shadow: 0 0 10px #ff42d3; }
+.char-btn.sae:hover { background: linear-gradient(60deg, #1cff6f, #ed0973); color: #000000; box-shadow: 0 0 10px #ed0973; }
+.char-btn.sae.active { background: linear-gradient(60deg, #ed0973, #1cff6f); color: #ffffff; box-shadow: 0 0 10px #1cff6f; }
 
-.char-btn.kaiser:hover { background: linear-gradient(5deg, #ffed61, #385fc0); color: #000000; box-shadow: 0 0 10px #0039ac; }
-.char-btn.kaiser.active { background: linear-gradient(5deg, #385fc0, #ffed61); color: #ffffff; box-shadow: 0 0 10px #0039ac; }
+.char-btn.charles:hover { background: linear-gradient(5deg, #fff49d, #5e8cff); color: #000000; box-shadow: 0 0 10px #5e8cff; }
+.char-btn.charles.active { background: linear-gradient(5deg, #5e8cff, #fff49d); color: #ffffff; box-shadow: 0 0 10px #fff49d; }
 
-.char-btn.lorenzo:hover { background: linear-gradient(135deg, #0a6901, #3a0053); color: #000000; box-shadow: 0 0 10px #6900a5; }
-.char-btn.lorenzo.active { background: linear-gradient(135deg, #3a0053, #0a6901); color: #ffffff; box-shadow: 0 0 10px #6900a5; }
+.char-btn.kaiser:hover { background: linear-gradient(5deg, #ffed61, #385fc0); color: #000000; box-shadow: 0 0 10px #385fc0; }
+.char-btn.kaiser.active { background: linear-gradient(5deg, #385fc0, #ffed61); color: #ffffff; box-shadow: 0 0 10px #ffed61; }
 
-.char-btn.rin:hover { background: linear-gradient(5deg, #00bbcc, #00825d); color: #000000; box-shadow: 0 0 10px #008b6b; }
-.char-btn.rin.active { background: linear-gradient(5deg, #00825d, #00bbcc); color: #ffffff; box-shadow: 0 0 10px #008b6b; }
+.char-btn.lorenzo:hover { background: linear-gradient(135deg, #0a6901, #3a0053); color: #000000; box-shadow: 0 0 10px #3a0053; }
+.char-btn.lorenzo.active { background: linear-gradient(135deg, #3a0053, #0a6901); color: #ffffff; box-shadow: 0 0 10px #3a0053; }
 
-.char-btn.nel-isagi:hover { background: linear-gradient(-5deg, #ffffff, #003d73); color: #000000; box-shadow: 0 0 10px #ffffff; }
+.char-btn.rin:hover { background: linear-gradient(5deg, #00bbcc, #00825d); color: #000000; box-shadow: 0 0 10px #00825d; }
+.char-btn.rin.active { background: linear-gradient(5deg, #00825d, #00bbcc); color: #ffffff; box-shadow: 0 0 10px #00bbcc; }
+
+.char-btn.nel-isagi:hover { background: linear-gradient(-5deg, #ffffff, #003d73); color: #000000; box-shadow: 0 0 10px #003d73; }
 .char-btn.nel-isagi.active { background: linear-gradient(-5deg, #003d73, #ffffff); color: #ffffff; box-shadow: 0 0 10px #ffffff; }
 
-.char-btn.niko:hover { background: linear-gradient(-5deg, #2fbbb1, #4a0086); color: #000000; box-shadow: 0 0 10px #6abdb7; }
-.char-btn.niko.active { background: linear-gradient(-5deg, #480083, #2ac4ba); color: #ffffff; box-shadow: 0 0 10px #6abdb7; }
+.char-btn.niko:hover { background: linear-gradient(-5deg, #2fbbb1, #4a0086); color: #000000; box-shadow: 0 0 10px #4a0086; }
+.char-btn.niko.active { background: linear-gradient(-5deg, #480083, #2ac4ba); color: #ffffff; box-shadow: 0 0 10px #2ac4ba; }
 
-.char-btn.karasu:hover { background: linear-gradient(-5deg, #2e459b, #01024c); color: #000000; box-shadow: 0 0 10px #7c90fc; }
-.char-btn.karasu.active { background: linear-gradient(-5deg, #01023e, #2e459b); color: #ffffff; box-shadow: 0 0 10px #7c90fc; }
+.char-btn.karasu:hover { background: linear-gradient(-5deg, #2e459b, #01024c); color: #000000; box-shadow: 0 0 10px #01024c; }
+.char-btn.karasu.active { background: linear-gradient(-5deg, #01023e, #2e459b); color: #ffffff; box-shadow: 0 0 10px #2e459b; }
 
 .char-btn.otoya:hover { background: linear-gradient(-5deg, #ffffff, #00fa04); color: #000000; box-shadow: 0 0 10px #00fa04; }
-.char-btn.otoya.active { background: linear-gradient(-5deg, #00fa04, #ffffff); color: #ffffff; box-shadow: 0 0 10px #00fa04; }
+.char-btn.otoya.active { background: linear-gradient(-5deg, #00fa04, #ffffff); color: #ffffff; box-shadow: 0 0 10px #ffffff; }
 
-.char-btn.hiori:hover { background: linear-gradient(-5deg, #96eeff, #d2fafd); color: #000000; box-shadow: 0 0 10px #ffffff; }
-.char-btn.hiori.active { background: linear-gradient(-5deg, #d2fafd, #96edff); color: #ffffff; box-shadow: 0 0 10px #ffffff; }
+.char-btn.hiori:hover { background: linear-gradient(-5deg, #96eeff, #d2fafd); color: #000000; box-shadow: 0 0 10px #d2fafd; }
+.char-btn.hiori.active { background: linear-gradient(-5deg, #d2fafd, #96edff); color: #ffffff; box-shadow: 0 0 10px #96edff; }
+
+.char-btn.ness:hover { background: linear-gradient(-5deg, #460046, #ef99d5); color: #000000; box-shadow: 0 0 10px #cb5eab; }
+.char-btn.ness.active { background: linear-gradient(-5deg, #e18ac7, #460046); color: #ffffff; box-shadow: 0 0 10px #ff00ff; }
+
+.char-btn.kiyora:hover { background: linear-gradient(-5deg, #c0c9ed, #695db3); color: #000000; box-shadow: 0 0 10px #695db3; }
+.char-btn.kiyora.active { background: linear-gradient(-5deg, #695db3, #c0c9ed); color: #ffffff; box-shadow: 0 0 10px #c0c9ed; }
 
 /* Ajoute toutes les autres couleurs comme dans ton ancien fichier */
 
@@ -416,507 +457,6 @@ nav ul li a.active {
     border: none;
     border-radius: 12px;
 }
-
-
-/* Global */
-.crown .title {
-  background-image: linear-gradient(90deg, #0dc500, #ffea00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-/* Style description — couleur normale */
-.crown .desc {
-  color: #ffffff; /* la couleur que tu veux */
-}
-
-.butterfly .title {
-  background-image: linear-gradient(90deg, #b8c500, #b700ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-/* Style description — couleur normale */
-.butterfly .desc {
-  color: #ffffff; /* la couleur que tu veux */
-}
-
-.metavision .title {
-  background-image: linear-gradient(90deg, #005cc5, #050061);   
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-/* Style description — couleur normale */
-.metavision .desc {
-  color: #ffffff; /* la couleur que tu veux */
-}
-
-.predator .title {
-  background-image: linear-gradient(90deg, #c50000, #470000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-/* Style description — couleur normale */
-.predator .desc {
-  color: #ffffff; /* la couleur que tu veux */
-}
-
-.godspeed .title {
-  background-image: linear-gradient(90deg, #00a4c5, #ffcc00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-/* Style description — couleur normale */
-.godspeed .desc {
-  color: #ffffff; /* la couleur que tu veux */
-}
-
-.rainbow .title {
-  background-image: linear-gradient(90deg, #c50000, #84ff00, #0055c5, #b800c5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-/* Style description — couleur normale */
-.rainbow .desc {
-  color: #ffffff; /* la couleur que tu veux */
-}
-
-/* Machinery plus bas */
-.acestriker{color: rgb(255, 0, 0);}
-.elitestriker{color: rgb(197, 0, 0);}
-.ngxistriker{color: rgb(135, 0, 0);}
-.worldclassstriker{color: rgb(91, 0, 0);}
-/* Greatest Striker plus bas */
-.acepasser{color: rgb(0, 0, 255);}
-.elitepasser{color: rgb(0, 0, 197);}
-.ngxipasser{color: rgb(0, 0, 135);}
-.worldclasspasser{color: rgb(0, 0, 91);}
-/* Greatest Passer plus bas */
-.acedefender{color: rgb(0, 255, 0);}
-.elitedefender{color: rgb(0, 197, 0);}
-.ngxidefender{color: rgb(0, 135, 0);}
-.worldclassdefender{color: rgb(0, 91, 0);}
-/* Greatest Defender plus bas */
-.riche{color: gold;}
-.extrariche{color: gold;}
-.billion{color: gold;}
-.goldenshoe{color: rgb(219, 169, 89);}
-.ncl{color: rgb(208, 173, 0);}
-.ballonor{color: goldenrod;}
-/* Goat plus bas */
-
-/* Rareté */
-.commun {color: rgb(150, 255, 150);}
-.rare {color: rgb(150, 201, 255);}
-.legendary {color: rgb(255, 238, 86);}
-.mythical {color: rgb(255, 0, 251);}
-.worldclass {color: rgb(97, 97, 97);}
-.evo {color: rgb(174, 54, 255);}
-
-/* Isagi */
-.heartofblk{color: #2731f0;}
-.luck{color: #ffda80;}
-
-/* Nagi */
-.lazy{color: #dfdede;;}
-.awoken{color: #73d5ff;}
-.fallen{color: #a7a7a7;}
-
-/* Chigiri */
-.speedster{color: #af0482;}
-.panther{color: #e91e63;}
-
-/* Bachira */
-.monster{color: #776b00;}
-.ginga{color: #c9ba00;;}
-
-/* Shidou */
-.zesty{color: #b700ff;}
-.formless{color: #ef75ff;}
-.devil{color: #9b59b6;}
-
-/* Otoya */
-.ninpo{color: #3bff21;}
-.stealth{color: #79a371;}
-
-/* Niko */
-.watchtower{color: #00d491;}
-.guardingeyes{color: #002eb7;}
-
-/* Kurona */
-.hotline{color: #e91e63;}
-.reliable{color: #b40062;}
-
-/* Karasu */
-.crow{color: #0b08ab;}
-.assassin{color: #15144a;}
-
-/* Hiori */
-.ultrasadist{color: #15879e;}
-.icecompass{color: #97f1ff;}
-
-/* Kunigami */
-.wildcard{color: #ca6100;}
-.joker{color: #743600;}
-
-/* Yukimiya */
-.oneonone{color: #ff9900;}
-.street{color: #ffaa50;}
-.swordscrew{color: #a84300;}
-
-/* Aiku */
-.ultimate{color: #19d400;}
-.godsnake{color: #c20000;}
-
-/* Barou */
-.king{color: #9e0000;}
-.blkjoker{color: #4e0000;}
-
-/* Sae */
-.japantreasure{color: #e2006d;}
-.prodigy{color: #00ff5f;}
-.beautifuldestruction{color: #ad1457;}
-
-/* Kaiser */
-.emperor{color: #2900d4;}
-.superstar{color: #7185b6;}
-
-/* Lorenzo */
-.aceeater{color: #4700aa;}
-.zombie{color: #006623;}
-
-/* Rin */
-.puppet{color: #0d0094;}
-.berserk{color: #11806a;}
-.disgustingdestruction{color: #091264;}
-
-/* Reo */
-.copycatoffense{
-  position: relative;
-  display: list-item;
-  width: 100%;
-  margin-bottom: 6px;
-  background: linear-gradient(90deg, #7700ff 0%, #74ffd8 40%, #af1bff 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: copycat-shine 3s linear infinite;
-}
-.copycatdefense{
-  position: relative;
-  display: list-item;
-  width: 100%;
-  margin-bottom: 6px;
-  background: linear-gradient(90deg, #7700ff 0%, #7dff74 40%, #af1bff 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: copycat-shine 3s linear infinite;
-}
-.perfectcopy{color: #be90ff;}
-
-/* NEL Isagi */
-.neoegoist{color: #00053a;}
-.demonking{color: #463679;}
-
-/*================================ Animated Global Styles ================================*/
-
-.striker {
-    position: relative;
-    display: inline-block;
-
-    background: linear-gradient(90deg,rgb(255, 96, 96), rgb(255, 0, 0), rgb(197, 0, 0), rgb(135, 0, 0), rgb(91, 0, 0));
-    background-size: 300%;
-    animation: shine 3s linear infinite;
-
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.striker::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-
-    background: inherit;
-    background-size: inherit;
-    animation: inherit;
-    -webkit-background-clip: text;
-    color: transparent;
-
-    filter: blur(16px);
-    opacity: 1;
-    pointer-events: none;
-
-    /* 💡 Correction du glow vertical */
-    transform: scaleY (1) translateY(-2px);
-    transform-origin: center;
-}
-
-.passer {
-    position: relative;
-    display: inline-block;
-
-        background: linear-gradient(90deg,rgb(96, 117, 255), rgb(0, 8, 255), rgb(0, 39, 197), rgb(0, 18, 135), rgb(0, 12, 91));
-    background-size: 300%;
-    animation: shine 3s linear infinite;
-
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.passer::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-
-    background: inherit;
-    background-size: inherit;
-    animation: inherit;
-    -webkit-background-clip: text;
-    color: transparent;
-
-    filter: blur(16px);
-    opacity: 1;
-    pointer-events: none;
-
-    /* 💡 Correction du glow vertical */
-    transform: scaleY (1) translateY(-2px);
-    transform-origin: center;
-}
-
-.defender {
-    position: relative;
-    display: inline-block;
-
-    background: linear-gradient(90deg,rgb(96, 255, 112), rgb(34, 255, 0), rgb(0, 197, 7), rgb(31, 135, 0), rgb(21, 91, 0));
-    background-size: 300%;
-    animation: shine 3s linear infinite;
-
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.defender::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-
-    background: inherit;
-    background-size: inherit;
-    animation: inherit;
-    -webkit-background-clip: text;
-    color: transparent;
-
-    filter: blur(16px);
-    opacity: 1;
-    pointer-events: none;
-
-    /* 💡 Correction du glow vertical */
-    transform: scaleY (1) translateY(-2px);
-    transform-origin: center;
-}
-
-.goat {
-    position: relative;
-    display: inline-block;
-
-    background: linear-gradient(90deg, #ff0000, #ffff00, #2fff00, #00ffee, #0037ff, #9d00ff, #ff00a2);
-    background-size: 300%;
-    animation: shine 3s linear infinite;
-
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.goat::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-
-    background: inherit;
-    background-size: inherit;
-    animation: inherit;
-    -webkit-background-clip: text;
-    color: transparent;
-
-    filter: blur(16px);
-    opacity: 1;
-    pointer-events: none;
-
-    /* 💡 Correction du glow vertical */
-    transform: scaleY (1) translateY(-2px);
-    transform-origin: center;
-}
-
-@keyframes shine {
-    0% { background-position: 0%; }
-    100% { background-position: 300%; }
-}
-
-.machinery {
-    position: relative;
-    display: inline-block;
-
-    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(192, 182, 0), rgb(255, 255, 255), rgb(2, 72, 142));
-    background-size: 300%;
-    animation: shine 3s linear infinite;
-
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.machinery::after {
-    content: attr(data-text);
-    position: absolute;
-    inset: 0;
-
-    background: inherit;
-    background-size: inherit;
-    animation: inherit;
-    -webkit-background-clip: text;
-    color: transparent;
-
-    filter: blur(16px);
-    opacity: 1;
-    pointer-events: none;
-
-    /* 💡 Correction du glow vertical */
-    transform: scaleY (1) translateY(-2px);
-    transform-origin: center;
-}
-
-@keyframes shine {
-    0% { background-position: 0%; }
-    100% { background-position: 300%; }
-}
-
-
-
-/* Isagi */
-.title-detail h3.heartofblk{color: #2731f0;}
-.title-detail h3.luck{color: #ffda80;}
-
-
-/* Nagi */
-.title-detail h3.lazy{color: #dfdede;;}
-.title-detail h3.awoken{color: #73d5ff;}
-.title-detail h3.fallen{color: #a7a7a7;}
-
-/* Chigiri */
-.title-detail h3.speedster{color: #af0482;}
-.title-detail h3.panther{color: #e91e63;}
-
-/* Bachira */
-.title-detail h3.monster{color: #776b00;}
-.title-detail h3.ginga{color: #c9ba00;;}
-
-/* Shidou */
-.title-detail h3.zesty{color: #b700ff;}
-.title-detail h3.formless{color: #ef75ff;}
-.title-detail h3.devil{color: #9b59b6;}
-
-/* Niko */
-.title-detail h3.watchtower{color: #00d491;}
-.title-detail h3.guardingeyes{color: #002eb7;}
-
-/* Otoya */
-.title-detail h3.stealth{color: #79a371;}
-.title-detail h3.ninpo{color: #3bff21;}
-
-/* Kurona */
-.title-detail h3.hotline{color: #e91e63;}
-.title-detail h3.reliable{color: #b40062;}
-
-/* Karasu */
-.title-detail h3.crow{color: #0b08ab;}
-.title-detail h3.assassin{color: #15144a;}
-
-/* Hiori */
-.title-detail h3.ultrasadist{color: #15879e;}
-.title-detail h3.icecompass{color: #97f1ff;}
-
-/* Kunigami */
-.title-detail h3.wildcard{color: #ca6100;}
-.title-detail h3.joker{color: #743600;}
-
-/* Yukimiya */
-.title-detail h3.oneonone{color: #ff9900;}
-.title-detail h3.street{color: #ffaa50;}
-.title-detail h3.swordscrew{color: #a84300;}
-
-/* Aiku */
-.title-detail h3.ultimate{color: #19d400;}
-.title-detail h3.godsnake{color: #c20000;}
-
-/* Barou */
-.title-detail h3.king{color: #9e0000;}
-.title-detail h3.blkjoker{color: #4e0000;}
-
-/* Sae */
-.title-detail h3.japantreasure{color: #e2006d;}
-.title-detail h3.prodigy{color: #00ff5f;}
-.title-detail h3.beautifuldestruction{color: #ad1457;}
-
-/* Kaiser */
-.title-detail h3.emperor{color: #2900d4;}
-.title-detail h3.superstar{color: #7185b6;}
-
-/* Lorenzo */
-.title-detail h3.aceeater{color: #4700aa;}
-.title-detail h3.zombie{color: #006623;}
-
-/* Rin */
-.title-detail h3.puppet{color: #0d0094;}
-.title-detail h3.berserk{color: #11806a;}
-.title-detail h3.disgustingdestruction{color: #091264;}
-
-/* Reo */
-.title-detail h3.copycatoffense{
-  position: relative;
-  display: list-item;
-  width: 100%;
-  margin-bottom: 6px;
-  background: linear-gradient(90deg, #7700ff 0%, #30ffc4 40%, #af1bff 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: copycat-shine 3s linear infinite;
-}
-.title-detail h3.copycatdefense{
-  position: relative;
-  display: list-item;
-  width: 100%;
-  margin-bottom: 6px;
-  background: linear-gradient(90deg, #7700ff 0%, #31ff23 40%, #af1bff 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: copycat-shine 3s linear infinite;
-}
-
-/* NEL Isagi */
-.title-detail h3.neoegoist{color: #00053a;}
-.title-detail h3.demonking{color: #463679;}
-
-/* Animation for Copycat defense gradient */
-@keyframes copycat-shine {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-
 
 .desc {color:white;}
 

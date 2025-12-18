@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         /* Manshine */
         { name: "William", club: "manshine", folder: "manshine", clubName: "Manshine City", position: "CF", value: 0, avatar: "Joueurs/images-joueurs/william.png" },
-        { name: "Imrane", club: "manshine", folder: "manshine", clubName: "Manshine City", position: "CF", value: 0, avatar: "Joueurs/images-joueurs/ntm.png" },
+        { name: "Imrane", club: "manshine", folder: "manshine", clubName: "Manshine City", position: "CF", value: 0, avatar: "Joueurs/images-joueurs/imrane.png" },
         { name: "Elijah", club: "manshine", folder: "manshine", clubName: "Manshine City", position: "RW", value: 0, avatar: "Joueurs/images-joueurs/elijah.png" },
 
         /* Ubers */
@@ -31,28 +31,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function displayPlayers(list) {
+    container.innerHTML = "";
 
-        container.innerHTML = "";
+    list.forEach(p => {
+        const card = document.createElement("a");
+        card.classList.add("player-card", p.club);
+        card.href = `Joueurs/${p.folder}/${p.name.toLowerCase()}.html`;
 
-        list.forEach(p => {
+        // Formater le prix avec span séparé pour le nombre
+        const formattedValue = p.value.toLocaleString();
+        const priceHTML = p.value === 0 
+            ? `<span class="price-number zero-value">${formattedValue}</span>¥💎`
+            : `<span class="price-number">${formattedValue}</span>¥💎`;
 
-            const card = document.createElement("a");
-            card.classList.add("player-card", p.club);
+        card.innerHTML = `
+            <img src="${p.avatar}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>Club: ${p.clubName}</p>
+            <p>Position: ${p.position}</p>
+            <p>Valeur: ${priceHTML}</p>
+        `;
 
-            // EXACTEMENT comme ton ancien HTML
-            card.href = `Joueurs/${p.folder}/${p.name.toLowerCase()}.html`;
-
-            card.innerHTML = `
-                <img src="${p.avatar}" alt="${p.name}">
-                <h3>${p.name}</h3>
-                <p>Club: ${p.clubName}</p>
-                <p>Position: ${p.position}</p>
-                <p>Valeur: ${p.value.toLocaleString()}¥💎</p>
-            `;
-
-            container.appendChild(card);
-        });
-    }
+        container.appendChild(card);
+    });
+}
 
 
     function updatePlayers() {

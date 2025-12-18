@@ -1,0 +1,503 @@
+/* Global */
+.crown .title {
+  background-image: linear-gradient(90deg, #43ff36, #ffea00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.crown .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.butterfly .title {
+  background-image: linear-gradient(90deg, #eeff02, #6d007b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.butterfly .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.metavision .title {
+  background-image: linear-gradient(90deg, #005cc5, #b5b1ff, #ffffff);   
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.metavision .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.predator .title {
+  background-image: linear-gradient(90deg, #c50000, #3d0000, #461818);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.predator .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.godspeed .title {
+  background-image: linear-gradient(90deg, #00a4c5,#fff59e, #ff7700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.godspeed .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+.rainbow .title {
+  background-image: linear-gradient(90deg, #c50000, #84ff00, #0055c5, #b800c5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Style description — couleur normale */
+.rainbow .desc {
+  color: #ffffff; /* la couleur que tu veux */
+}
+
+/* Machinery plus bas */
+.acestriker{color: rgb(255, 0, 0);}
+.elitestriker{color: rgb(197, 0, 0);}
+.ngxistriker{color: rgb(135, 0, 0);}
+.worldclassstriker{color: rgb(91, 0, 0);}
+/* Greatest Striker plus bas */
+.acepasser{color: rgb(0, 0, 255);}
+.elitepasser{color: rgb(0, 0, 197);}
+.ngxipasser{color: rgb(0, 0, 135);}
+.worldclasspasser{color: rgb(0, 0, 91);}
+/* Greatest Passer plus bas */
+.acedefender{color: rgb(0, 255, 0);}
+.elitedefender{color: rgb(0, 197, 0);}
+.ngxidefender{color: rgb(0, 135, 0);}
+.worldclassdefender{color: rgb(0, 91, 0);}
+/* Greatest Defender plus bas */
+.riche{color: gold;}
+.extrariche{color: gold;}
+.billion{color: gold;}
+.goldenshoe{color: rgb(219, 169, 89);}
+.ncl{color: rgb(208, 173, 0);}
+.ballonor{color: goldenrod;}
+/* Goat plus bas */
+
+/* Rareté */
+.commun {color: rgb(150, 255, 150);}
+.rare {color: rgb(150, 201, 255);}
+.legendary {color: rgb(255, 238, 86);}
+.mythical {color: rgb(255, 0, 251);}
+.worldclass {color: rgb(97, 97, 97);}
+.evo {color: rgb(174, 54, 255);}
+
+/* Isagi */
+.heartofblk{color: #2731f0;}
+.luck{color: #ffda80;}
+
+/* Nagi */
+.lazy{color: #dfdede;;}
+.awoken{color: #73d5ff;}
+.fallen{color: #a7a7a7;}
+
+/* Chigiri */
+.speedster{color: #af0482;}
+.panther{color: #e91e63;}
+
+/* Bachira */
+.monster{color: #776b00;}
+.ginga{color: #c9ba00;;}
+
+/* Shidou */
+.zesty{color: #b700ff;}
+.formless{color: #ef75ff;}
+.devil{color: #9b59b6;}
+
+/* Otoya */
+.ninpo{color: #3bff21;}
+.stealth{color: #79a371;}
+
+/* Niko */
+.watchtower{color: #00d491;}
+.guardingeyes{color: #002eb7;}
+
+/* Kurona */
+.hotline{color: #e91e63;}
+.reliable{color: #b40062;}
+
+/* Karasu */
+.crow{color: #0b08ab;}
+.assassin{color: #15144a;}
+
+/* Hiori */
+.ultrasadist{color: #15879e;}
+.icecompass{color: #97f1ff;}
+
+/* Kunigami */
+.wildcard{color: #ca6100;}
+.joker{color: #743600;}
+
+/* Yukimiya */
+.oneonone{color: #ff9900;}
+.street{color: #ffaa50;}
+.swordscrew{color: #a84300;}
+
+/* Aiku */
+.ultimate{color: #19d400;}
+.godsnake{color: #c20000;}
+
+/* Barou */
+.king{color: #9e0000;}
+.blkjoker{color: #4e0000;}
+
+/* Sae */
+.japantreasure{color: #e2006d;}
+.prodigy{color: #00ff5f;}
+.beautifuldestruction{color: #ad1457;}
+
+/* Kaiser */
+.emperor{color: #2900d4;}
+.superstar{color: #7185b6;}
+
+/* Lorenzo */
+.aceeater{color: #4700aa;}
+.zombie{color: #006623;}
+
+/* Rin */
+.puppet{color: #0d0094;}
+.berserk{color: #11806a;}
+.disgustingdestruction{color: #091264;}
+
+/* Reo */
+.copycatoffense{
+  position: relative;
+  display: list-item;
+  width: 100%;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #7700ff 0%, #74ffd8 40%, #af1bff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: copycat-shine 3s linear infinite;
+}
+.copycatdefense{
+  position: relative;
+  display: list-item;
+  width: 100%;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #7700ff 0%, #7dff74 40%, #af1bff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: copycat-shine 3s linear infinite;
+}
+.perfectcopy{color: #be90ff;}
+
+/* NEL Isagi */
+.neoegoist{color: #00053a;}
+.demonking{color: #463679;}
+
+/*================================ Animated Global Styles ================================*/
+
+.striker {
+    position: relative;
+    display: inline-block;
+
+    background: linear-gradient(90deg,rgb(255, 96, 96), rgb(255, 0, 0), rgb(197, 0, 0), rgb(135, 0, 0), rgb(91, 0, 0));
+    background-size: 300%;
+    animation: shine 3s linear infinite;
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.striker::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+    background-size: inherit;
+    animation: inherit;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter: blur(16px);
+    opacity: 1;
+    pointer-events: none;
+
+    /* 💡 Correction du glow vertical */
+    transform: scaleY (1) translateY(-2px);
+    transform-origin: center;
+}
+
+.passer {
+    position: relative;
+    display: inline-block;
+
+        background: linear-gradient(90deg,rgb(96, 117, 255), rgb(0, 8, 255), rgb(0, 39, 197), rgb(0, 18, 135), rgb(0, 12, 91));
+    background-size: 300%;
+    animation: shine 3s linear infinite;
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.passer::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+    background-size: inherit;
+    animation: inherit;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter: blur(16px);
+    opacity: 1;
+    pointer-events: none;
+
+    /* 💡 Correction du glow vertical */
+    transform: scaleY (1) translateY(-2px);
+    transform-origin: center;
+}
+
+.defender {
+    position: relative;
+    display: inline-block;
+
+    background: linear-gradient(90deg,rgb(96, 255, 112), rgb(34, 255, 0), rgb(0, 197, 7), rgb(31, 135, 0), rgb(21, 91, 0));
+    background-size: 300%;
+    animation: shine 3s linear infinite;
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.defender::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+    background-size: inherit;
+    animation: inherit;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter: blur(16px);
+    opacity: 1;
+    pointer-events: none;
+
+    /* 💡 Correction du glow vertical */
+    transform: scaleY (1) translateY(-2px);
+    transform-origin: center;
+}
+
+.goat {
+    position: relative;
+    display: inline-block;
+
+    background: linear-gradient(90deg, #ff0000, #ffff00, #2fff00, #00ffee, #0037ff, #9d00ff, #ff00a2);
+    background-size: 300%;
+    animation: shine 3s linear infinite;
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.goat::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+    background-size: inherit;
+    animation: inherit;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter: blur(16px);
+    opacity: 1;
+    pointer-events: none;
+
+    /* 💡 Correction du glow vertical */
+    transform: scaleY (1) translateY(-2px);
+    transform-origin: center;
+}
+
+@keyframes shine {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+}
+
+.machinery {
+    position: relative;
+    display: inline-block;
+
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(192, 182, 0), rgb(255, 255, 255), rgb(2, 72, 142));
+    background-size: 300%;
+    animation: shine 3s linear infinite;
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.machinery::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+    background-size: inherit;
+    animation: inherit;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    filter: blur(16px);
+    opacity: 1;
+    pointer-events: none;
+
+    /* 💡 Correction du glow vertical */
+    transform: scaleY (1) translateY(-2px);
+    transform-origin: center;
+}
+
+@keyframes shine {
+    0% { background-position: 0%; }
+    100% { background-position: 300%; }
+}
+
+
+
+
+/* Couleurs des titres */
+
+
+
+
+/* Isagi */
+.title-detail h3.heartofblk{color: #2731f0;}
+.title-detail h3.luck{color: #ffda80;}
+
+
+/* Nagi */
+.title-detail h3.lazy{color: #dfdede;;}
+.title-detail h3.awoken{color: #73d5ff;}
+.title-detail h3.fallen{color: #a7a7a7;}
+
+/* Chigiri */
+.title-detail h3.speedster{color: #af0482;}
+.title-detail h3.panther{color: #e91e63;}
+
+/* Bachira */
+.title-detail h3.monster{color: #776b00;}
+.title-detail h3.ginga{color: #c9ba00;;}
+
+/* Shidou */
+.title-detail h3.zesty{color: #b700ff;}
+.title-detail h3.formless{color: #ef75ff;}
+.title-detail h3.devil{color: #9b59b6;}
+
+/* Niko */
+.title-detail h3.watchtower{color: #00d491;}
+.title-detail h3.guardingeyes{color: #002eb7;}
+
+/* Otoya */
+.title-detail h3.stealth{color: #79a371;}
+.title-detail h3.ninpo{color: #3bff21;}
+
+/* Kurona */
+.title-detail h3.hotline{color: #e91e63;}
+.title-detail h3.reliable{color: #b40062;}
+
+/* Karasu */
+.title-detail h3.crow{color: #0b08ab;}
+.title-detail h3.assassin{color: #15144a;}
+
+/* Hiori */
+.title-detail h3.ultrasadist{color: #15879e;}
+.title-detail h3.icecompass{color: #97f1ff;}
+
+/* Kunigami */
+.title-detail h3.wildcard{color: #ca6100;}
+.title-detail h3.joker{color: #743600;}
+
+/* Yukimiya */
+.title-detail h3.oneonone{color: #ff9900;}
+.title-detail h3.street{color: #ffaa50;}
+.title-detail h3.swordscrew{color: #a84300;}
+
+/* Aiku */
+.title-detail h3.ultimate{color: #19d400;}
+.title-detail h3.godsnake{color: #c20000;}
+
+/* Barou */
+.title-detail h3.king{color: #9e0000;}
+.title-detail h3.blkjoker{color: #4e0000;}
+
+/* Sae */
+.title-detail h3.japantreasure{color: #e2006d;}
+.title-detail h3.prodigy{color: #00ff5f;}
+.title-detail h3.beautifuldestruction{color: #ad1457;}
+
+/* Kaiser */
+.title-detail h3.emperor{color: #2900d4;}
+.title-detail h3.superstar{color: #7185b6;}
+
+/* Lorenzo */
+.title-detail h3.aceeater{color: #4700aa;}
+.title-detail h3.zombie{color: #006623;}
+
+/* Rin */
+.title-detail h3.puppet{color: #0d0094;}
+.title-detail h3.berserk{color: #11806a;}
+.title-detail h3.disgustingdestruction{color: #091264;}
+
+/* Reo */
+.title-detail h3.copycatoffense{
+  position: relative;
+  display: list-item;
+  width: 100%;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #7700ff 0%, #30ffc4 40%, #af1bff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: copycat-shine 3s linear infinite;
+}
+.title-detail h3.copycatdefense{
+  position: relative;
+  display: list-item;
+  width: 100%;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, #7700ff 0%, #31ff23 40%, #af1bff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: copycat-shine 3s linear infinite;
+}
+
+/* NEL Isagi */
+.title-detail h3.neoegoist{color: #00053a;}
+.title-detail h3.demonking{color: #463679;}
+
+/* Animation for Copycat defense gradient */
+@keyframes copycat-shine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
