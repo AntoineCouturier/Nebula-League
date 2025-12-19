@@ -170,27 +170,30 @@
         <button class="close-btn" id="closeMatchPopup">Fermer</button>
     </div>
 </div>
-<!-- Juste avant </body> -->
-<!-- 🔥 POPUP GRAPHIQUE RADAR -->
+
+<!-- POPUP RADAR AGRANDI -->
 <div class="popup-overlay" id="popupRadar">
     <div class="popup-box manshine-box" id="radarPopupBox">
-        <h2>Graphique des Compétences - Imrane</h2>
+        <h2>📊 Graphique Radar - Imrane</h2>
         
         <div class="radar-container">
-            <canvas id="skillsRadarChart" width="400" height="400"></canvas>
+            <canvas id="skillsRadarChart"></canvas>
         </div>
         
-        <!-- Légende -->
-        <div class="radar-legend">
-            <div class="legend-item">
-                <span class="legend-color" style="background:#ff0000"></span>
-                <span>Imrane</span>
-            </div>
+        <!-- Infos additionnelles -->
+        <div class="radar-info" style="text-align: center; margin: 20px 0;">
+            <p style="color: #fff; font-size: 1.1rem; margin-bottom: 5px;">
+                <strong>Note Globale : 91 | SS</strong>
+            </p>
+            <p style="color: #aaa; font-size: 0.9rem;">
+                Statistiques techniques
+            </p>
         </div>
         
         <button class="close-btn" id="closeRadarPopup">Fermer</button>
     </div>
-</div>
+</div> 
+
 <script src="../player-card.js"></script>
 </body>
 </html>

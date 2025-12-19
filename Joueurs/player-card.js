@@ -264,12 +264,12 @@ function extractStatsFromHTML() {
     const positionMatch = statsText.match(/Positionement.*?(\d+)/);
     
     return {
-        defense: defenseMatch ? parseInt(defenseMatch[1]) : 25,
-        passe: passeMatch ? parseInt(passeMatch[1]) : 25,
-        dribble: dribbleMatch ? parseInt(dribbleMatch[1]) : 25,
-        tir: tirMatch ? parseInt(tirMatch[1]) : 25,
-        offense: offenseMatch ? parseInt(offenseMatch[1]) : 25,
-        position: positionMatch ? parseInt(positionMatch[1]) : 25
+        defense: defenseMatch ? parseInt(defenseMatch[1]) : 0,
+        passe: passeMatch ? parseInt(passeMatch[1]) : 0,
+        dribble: dribbleMatch ? parseInt(dribbleMatch[1]) : 0,
+        tir: tirMatch ? parseInt(tirMatch[1]) : 0,
+        offense: offenseMatch ? parseInt(offenseMatch[1]) : 0,
+        position: positionMatch ? parseInt(positionMatch[1]) : 0
     };
 }
 
@@ -374,16 +374,16 @@ function getChartOptions(borderColor, globalAverage, playerName) {
 
 // ⭐ NOTATION FIFA
 function getFIFARating(value) {
-    if (value >= 95) return "SSS";
-    if (value >= 90) return "SS";
-    if (value >= 85) return "S";
-    if (value >= 80) return "A";
-    if (value >= 75) return "B";
-    if (value >= 70) return "C";
-    if (value >= 65) return "D";
-    if (value >= 60) return "E";
-    if (value >= 55) return "F";
-    if (value >= 50) return "G";
+    if (value >= 95) return "| SSS";
+    if (value >= 90) return "| SS";
+    if (value >= 85) return "| S";
+    if (value >= 80) return "| A";
+    if (value >= 75) return "| B";
+    if (value >= 70) return "| C";
+    if (value >= 65) return "| D";
+    if (value >= 60) return "| E";
+    if (value >= 55) return "| F";
+    if (value >= 50) return "| G";
     return "";
 }
 

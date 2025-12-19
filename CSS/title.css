@@ -111,6 +111,10 @@ nav ul li a.active {
     border-radius: 4px;
 }
 
+li {
+    list-style: none;
+}
+
 .clubs-title {
     text-align: center;
     font-size: 2.4rem;

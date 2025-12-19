@@ -2,13 +2,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const PLAYERS = [
         /* Bastard Munchen */
-        { name: "Dylan", club: "bastard", folder: "bm", clubName: "Bastard Munchen", position: "RW", value: 37500000, avatar: "Joueurs/images-joueurs/dylan.jpeg" },
-        { name: "Antoine", club: "bastard", folder: "bm", clubName: "Bastard Munchen", position: "CM", value: 79000000, avatar: "Joueurs/images-joueurs/anto.png" },
+        { name: "Dylan", club: "bastard", folder: "bm", clubName: "Bastard Munchen", position: "RW", value: 0, avatar: "Joueurs/images-joueurs/dylan.jpeg" },
+        { name: "Antoine", club: "bastard", folder: "bm", clubName: "Bastard Munchen", position: "CM", value: 0, avatar: "Joueurs/images-joueurs/anto.png" },
         { name: "Alessio", club: "bastard", folder: "bm", clubName: "Bastard Munchen", position: "CF", value: 0, avatar: "Joueurs/images-joueurs/alessio.png" },
 
         /* PXG */
-        { name: "Jason", club: "pxg", folder: "pxg", clubName: "PXG", position: "CF", value: 8500000, avatar: "Joueurs/images-joueurs/Jason.png" },
-        { name: "Enzo", club: "pxg", folder: "pxg", clubName: "PXG", position: "CM", value: 8500000, avatar: "Joueurs/images-joueurs/enzo.png" },
+        { name: "Jason", club: "pxg", folder: "pxg", clubName: "PXG", position: "CF", value: 0, avatar: "Joueurs/images-joueurs/Jason.png" },
+        { name: "Enzo", club: "pxg", folder: "pxg", clubName: "PXG", position: "CM", value: 0, avatar: "Joueurs/images-joueurs/enzo.png" },
 
         /* Manshine */
         { name: "William", club: "manshine", folder: "manshine", clubName: "Manshine City", position: "CF", value: 0, avatar: "Joueurs/images-joueurs/william.png" },
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         /* Retraite */
         { name: "Matheo", club: "retraite", folder: "retraite", clubName: "Retraite", position: "CM", value: 0, avatar: "Joueurs/images-joueurs/matheo.png" },
-        { name: "Theo", club: "retraite", folder: "retraite", clubName: "Retraite", position: "RW", value: 33000000, avatar: "Joueurs/images-joueurs/theo.png" }
+        { name: "Theo", club: "retraite", folder: "retraite", clubName: "Retraite", position: "RW", value: 0, avatar: "Joueurs/images-joueurs/theo.png" }
     ];
 
     const container = document.getElementById("playersContainer");

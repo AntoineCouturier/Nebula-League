@@ -5,6 +5,7 @@ const CLUB_COLORS = {
     "Ubers": { from: "#34ff4e", to: "#c900dfff" },
     "Barcha": { from: "#ffe600", to: "#c900dfff" },
     "Manshine City": { from: "#00d4ff", to: "#c900dfff" },
+    "Retraite": { from: "#ff8c00ff", to: "#c900dfff" },
 };
 
 // 🔥 LOGOS — nommage automatique (img/clubs/)
@@ -15,26 +16,26 @@ const CLUB_LOGOS = club => `images/clubs_icon/${club.replace(/\s+/g, "_")}.png`;
 // TES DONNÉES (NON MODIFIÉES)
 // ------------------------
 const DATA = {
-    topScorer: { name: "Dylan", goals: 6, club: "Bastard Munchen" },
-    topPasser: { name: "Antoine", passes: 7, club: "Bastard Munchen" },
-    topDefender: { name: "Antoine", defenses: 12, club: "Bastard Munchen" },
-    topPrice: { name: "Antoine", price: "79,000,000¥💎", club: "Bastard Munchen" },
-    topClub: { name: "Manshine City", titles: 1 },
+    topScorer: { name: "Aucun", goals: 0, club: "Retraite" },
+    topPasser: { name: "Aucun", passes: 0, club: "Retraite" },
+    topDefender: { name: "Aucun", defenses: 0, club: "Retraite" },
+    topPrice: { name: "Aucun", price: "0¥💎", club: "Retraite" },
+    topClub: { name: "Aucun", titles: 0, club: "Retraite" },
 
     clubsAlltime: [
-        {rank:1, name:"Manshine City", points:3, titles:1, winpct:100, diff:+11},
-        {rank:2, name:"PXG", points:0, titles:0, winpct:0, diff:-11},
+        {rank:1, name:"Manshine City", points:0, titles:0, winpct:0, diff:0},
+        {rank:2, name:"PXG", points:0, titles:0, winpct:0, diff:0},
         {rank:3, name:"Ubers", points:0, titles:0, winpct:0, diff:0},
         {rank:4, name:"Barcha", points:0, titles:0, winpct:0, diff:0},
         {rank:5, name:"Bastard Munchen", points:0, titles:0, winpct:0, diff:0}
     ],
 
     scorers: [
-        {rank:1, name:"Dylan", club:"Manshine City", goals:6, avg:6.0},
-        {rank:2, name:"Antoine", club:"Manshine City", goals:5, avg:5.0},
-        {rank:3, name:"Theo", club:"Manshine City", goals:2, avg:2.0},
-        {rank:4, name:"Jason", club:"PXG", goals:1, avg:1.0},
-        {rank:5, name:"Enzo", club:"PXG", goals:1, avg:1.0},
+        {rank:1, name:"???", club:"Bastard Munchen", goals:0, avg:0},
+        {rank:2, name:"???", club:"PXG", goals:0, avg:0},
+        {rank:3, name:"???", club:"Ubers", goals:0, avg:0},
+        {rank:4, name:"???", club:"Barcha", goals:0, avg:0},
+        {rank:5, name:"???", club:"Manshine City", goals:0, avg:0},
     ],
 
 
@@ -62,30 +63,22 @@ const DATA = {
         // ----------------------------
         // Records Saisonier
         // ----------------------------
-        {title:"Match le plus prolifique de la Saison", value:"Manshine City 11 - 2 PXG (15 buts)",season:true},
-        {title:"Plus grosse victoire de la Saison", value:"Manshine City 11 - 2 PXG (11 buts)",season:true},
-        {title:"Plus Grande Série d'invincibilité de la Saison", value:"Manshine City — 2 matchs",season:true},
-        {title:"Meilleur Offense de la Saison", value:"Manshine City — 11 Buts Marqués", season:true},
-        {title:"Meilleur Defense de la Saison", value:"Manshine City — 1 Buts Encaissés", season:true},
-        {title:"Buts le Plus Rapide de la Saison", value:"Dylan — 23s",season:true},
-        {
-            title: "Plus Beau But de la Saison",
-            value: `<a href="Autre/season_goal.html" target=_blank class="record-btn">Voir →</a>`,season:true
-        },
-        {
-            title: "Pire But Manqué de la Saison",
-            value: `<a href="Autre/season_miss.html" target=_blank class="record-btn">Voir →</a>`,season:true
-        }
+        {title:"Match le plus prolifique de la Saison", value:"Aucun",season:true},
+        {title:"Plus grosse victoire de la Saison", value:"Aucune",season:true},
+        {title:"Plus Grande Série d'invincibilité de la Saison", value:"Aucune",season:true},
+        {title:"Meilleur Offense de la Saison", value:"Aucun", season:true},
+        {title:"Meilleur Defense de la Saison", value:"Aucun", season:true},
+        {title:"Buts le Plus Rapide de la Saison", value:"Aucun",season:true}
 
 
     ],
 
     clubsPerformance: [
-        { club: "Manshine City", value: 100 },
+        { club: "Manshine City", value: 0 },
         { club: "Bastard Munchen", value: 0 },
         { club: "Ubers", value: 0 },
         { club: "Barcha", value: 0 },
-        { club: "PXG", value: 1 }
+        { club: "PXG", value: 0 }
     ]
 };
 
@@ -123,12 +116,46 @@ const clubRow = c => `
 // ----------------------------
 let clubsTableData = [...DATA.clubsAlltime];
 
+// Créer une copie pour le classement naturel (toujours décroissant)
+function getNaturalRanking() {
+    // Trier par points décroissant pour le classement naturel
+    return [...DATA.clubsAlltime].sort((a, b) => b.points - a.points);
+}
+
+// Calculer les rangs une fois pour toutes selon le classement naturel
+const naturalRanking = getNaturalRanking();
+const rankMap = {};
+naturalRanking.forEach((club, index) => {
+    rankMap[club.name] = index + 1; // #1, #2, etc.
+});
+
 const tbodyAll = document.querySelector("#alltime-table tbody");
 
 function renderAllTime() {
     tbodyAll.innerHTML = "";
-    clubsTableData.forEach(c => tbodyAll.innerHTML += clubRow(c));
+    
+    clubsTableData.forEach(c => {
+        // Utiliser le rang naturel (toujours le même) peu importe le tri
+        const rank = rankMap[c.name] || 0;
+        
+        tbodyAll.innerHTML += `
+        <tr>
+            <td>${rank}</td>
+            <td>
+                <img src="${CLUB_LOGOS(c.name)}" class="club-icon"> 
+                ${c.name}
+            </td>
+            <td>${c.points}</td>
+            <td>${c.titles}</td>
+            <td>${c.winpct}%</td>
+            <td>${c.diff}</td>
+        </tr>
+        `;
+    });
 }
+
+// Trier par défaut selon les points (décroissant) au chargement
+clubsTableData.sort((a, b) => b.points - a.points);
 renderAllTime();
 
 document.querySelectorAll("#alltime-table th").forEach((th, index) => {
@@ -289,5 +316,5 @@ topPriceCard.innerHTML = `
 const topClubCard = document.getElementById("topClub");
 topClubCard.innerHTML = `
     ${DATA.topClub.name} (${DATA.topClub.titles})
-    <img src="${CLUB_LOGOS(DATA.topClub.name)}" class="stat-card-img" alt="Logo Club">
+    <img src="${CLUB_LOGOS(DATA.topClub.club)}" class="stat-card-img" alt="Logo Club">
 `;

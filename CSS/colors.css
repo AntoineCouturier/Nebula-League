@@ -105,12 +105,26 @@
 
 /* Isagi */
 .heartofblk{color: #2731f0;}
-.luck{color: #ffda80;}
+.luck{
+    background: linear-gradient(135deg, #ffffff, #ffcc00, #ffffff);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2s infinite linear;
+}
 
 /* Nagi */
-.lazy{color: #dfdede;;}
+.lazy{color: #dfdede;}
 .awoken{color: #73d5ff;}
-.fallen{color: #a7a7a7;}
+.fallen{
+    background: linear-gradient(135deg, #72c8e3, #daffff, #707272, #72c8e3, #daffff, #707272);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2s infinite linear;
+}
 
 /* Chigiri */
 .speedster{color: #af0482;}
@@ -144,6 +158,14 @@
 /* Hiori */
 .ultrasadist{color: #15879e;}
 .icecompass{color: #97f1ff;}
+
+/* Kiyora */
+.breakdancer{color: #ff5d5d;}
+.godunknown{color: #695db3;}
+
+/* Ness */
+.magician{color: #f0afee;}
+.spell{color: #6a0858;}
 
 /* Kunigami */
 .wildcard{color: #ca6100;}
@@ -500,4 +522,9 @@
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+/* Animation du shimmer */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
 }

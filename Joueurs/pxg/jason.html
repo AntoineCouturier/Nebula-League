@@ -102,7 +102,6 @@
 
         <label for="seasonSelect">Choisir une saison :</label>
         <select id="seasonSelect">
-            <option value="0">Saison 0</option>
             <option value="1">Saison 1 (Actuel)</option>
         </select>
 
@@ -113,18 +112,6 @@
 
         <!-- 🔒 Stats cachées (propres au joueur) -->
         <div id="hidden-season-stats" style="display:none;">
-
-            <div class="season"
-                data-season="0"
-                data-matchs="1"
-                data-buts="1"
-                data-assists="1"
-                data-saves="2"
-                data-dribbles="5"
-                data-mvp="0"
-                data-win="0"
-                data-lose="1">
-            </div>
 
             <div class="season"
                 data-season="1"
@@ -153,6 +140,20 @@
         <select id="matchSelect">
             <option value="1">Match 1</option>
             <option value="2">Match 2</option>
+            <option value="3">Match 3</option>
+            <option value="4">Match 4</option>
+            <option value="5">Match 5</option>
+            <option value="6">Match 6</option>
+            <option value="7">Match 7</option>
+            <option value="8">Match 8</option>
+            <option value="9">Match 9</option>
+            <option value="10">Match 10</option>
+            <option value="11">Match 11</option>
+            <option value="12">Match 12</option>
+            <option value="13">Match 13</option>
+            <option value="14">Match 14</option>
+            <option value="15">Match 15</option>
+            <option value="16">Match 16</option>
         </select>
 
         <div id="matchStatsDisplay" class="popup-stats"></div>
@@ -170,7 +171,7 @@
             </div>
 
             <div class="match"
-                data-match="1"
+                data-match="2"
                 data-title="PXG vs Manshine City| 01/04/2022"
                 data-buts="0"
                 data-pass="0"
@@ -183,26 +184,30 @@
         <button class="close-btn" id="closeMatchPopup">Fermer</button>
     </div>
 </div>
-<!-- 🔥 POPUP GRAPHIQUE RADAR -->
+
+<!-- POPUP RADAR AGRANDI -->
 <div class="popup-overlay" id="popupRadar">
-    <div class="popup-box pxg-box" id="radarPopupBox">
-        <h2>Graphique des Compétences - Jason</h2>
+    <div class="popup-box manshine-box" id="radarPopupBox">
+        <h2>📊 Graphique Radar - Jason</h2>
         
         <div class="radar-container">
-            <canvas id="skillsRadarChart" width="400" height="400"></canvas>
+            <canvas id="skillsRadarChart"></canvas>
         </div>
         
-        <!-- Légende -->
-        <div class="radar-legend">
-            <div class="legend-item">
-                <span class="legend-color" style="background:#ff0000"></span>
-                <span>Jason</span>
-            </div>
+        <!-- Infos additionnelles -->
+        <div class="radar-info" style="text-align: center; margin: 20px 0;">
+            <p style="color: #fff; font-size: 1.1rem; margin-bottom: 5px;">
+                <strong>Note Globale : ??? | ???</strong>
+            </p>
+            <p style="color: #aaa; font-size: 0.9rem;">
+                Statistiques techniques
+            </p>
         </div>
         
         <button class="close-btn" id="closeRadarPopup">Fermer</button>
     </div>
-</div>
+</div> 
+
 <script src="../player-card.js"></script>
 </body>
 </html>
