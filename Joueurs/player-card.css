@@ -473,19 +473,19 @@ h2 {
 }
 
 .d {
-    color: #C8FF00; /* 69-65 */
+    color: #efff00; /* 69-65 */
 }
 
 .e {
-    color: #FFD700; /* 64-60 */
+    color: #ffa000; /* 64-60 */
 }
 
 .f {
-    color: #FFB300; /* 59-55 */
+    color: #ff6800; /* 59-55 */
 }
 
 .g {
-    color: #FF7A00; /* 54-50 */
+    color: #ff0e00; /* 54-50 */
 }
 
 .h {
@@ -1388,4 +1388,5 @@ h2 {
         transform: scale(1) translateY(0); 
         opacity: 1; 
     }
+
 }
